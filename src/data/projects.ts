@@ -24,6 +24,8 @@ export const projects: Project[] = [
     tags: ["React Native", "Firebase", "Firestore", "Full-Stack", "Real-Time Systems", "Mobile", "Geolocation"],
     featured: true,
     year: "2025",
+    image: "/images/projects/coquest.jpg",
+    imageAlt: "CoQuest's live campus map showing quest pins near Stanford landmarks",
     role: "Team of 4 — CS278 (Social Computing)",
     highlights: [
       "Built a full-stack mobile app (React Native + Firebase) with Firestore-backed real-time listeners for live quest feeds and RSVP counts, and Firebase Auth gated to campus email addresses.",
@@ -46,6 +48,8 @@ export const projects: Project[] = [
     tags: ["NLP", "Transformers", "PyTorch", "LoRA", "ReFT", "LLMs"],
     featured: true,
     year: "2025",
+    image: "/images/projects/gpt2-from-scratch.jpg",
+    imageAlt: "Bar chart comparing peak GPU memory usage across fine-tuning methods on SST",
     role: "Team of 3 — CS224N",
     highlights: [
       "Implemented causal multi-head self-attention, pre-LayerNorm Transformer blocks, and embedding weight tying from scratch.",
@@ -68,6 +72,8 @@ export const projects: Project[] = [
     tags: ["Python", "Streamlit", "Anomaly Detection", "Time-Series", "Data Fusion", "Biosecurity", "Data Visualization"],
     featured: true,
     year: "2025",
+    image: "/images/projects/biosurveillance-digital-immune-system.jpg",
+    imageAlt: "Digital Immune System dashboard showing risk summary and wastewater, hospital, and air-quality trend lines",
     role: "Founder & Project Lead — Gordian Knot Center for National Security Innovation",
     highlights: [
       "Fused wastewater, hospital-admission, and air-quality streams into a unified risk index using rolling z-scores and adjustable weights.",
@@ -92,6 +98,8 @@ export const projects: Project[] = [
     tags: ["Computational Fluid Dynamics", "SimVascular", "Cardiovascular", "Medical Imaging", "Python", "Simulation"],
     featured: true,
     year: "2026",
+    image: "/images/projects/fontan-virtual-stenting.jpg",
+    imageAlt: "Reconstructed 3D patient-specific model of the Fontan circulation",
     role: "Honors Thesis · Marsden Lab (advisor: Dr. Alison Marsden)",
     highlights: [
       "Engineered a patient-specific 3D modeling and simulation pipeline: vessel pathing, segmentation, volumetric meshing, and centerline generation in SimVascular.",
@@ -113,6 +121,8 @@ export const projects: Project[] = [
     tags: ["Medical Devices", "Biosensors", "Photoacoustics", "Hardware", "Signal Processing", "Neonatal Care"],
     featured: true,
     year: "2026",
+    image: "/images/projects/circumflex-epvo.jpg",
+    imageAlt: "Bench setup for the photoacoustic probe: laser component, transducer, and amplifier",
     role: "Capstone Team (Circumflex) — BIOE 141A/B",
     highlights: [
       "Defined the clinical need and system requirements for a minimally invasive transesophageal photoacoustic oximeter for neonates.",
