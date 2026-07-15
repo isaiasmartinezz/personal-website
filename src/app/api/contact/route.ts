@@ -1,20 +1,17 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+import { site } from "@/data/site";
 
 // ---------------------------------------------------------------------------
 // Contact endpoint
 // ---------------------------------------------------------------------------
-// Right now this validates the submission and returns success WITHOUT actually
-// sending an email — so the form works end-to-end in the UI, but you won't
-// receive anything until you connect a provider below.
+// Validates the submission, then emails it via Resend to site.email, with
+// reply-to set to the visitor's address so you can just hit "reply".
 //
-// To deliver real email (recommended: Resend — generous free tier):
-//   1. npm install resend
-//   2. Add RESEND_API_KEY to your environment (Vercel → Project → Settings →
-//      Environment Variables, and .env.local for local dev).
-//   3. Uncomment the block marked "SEND EMAIL" and set the to/from addresses.
-//
-// Alternatives that need no backend code at all: swap the form's fetch() for a
-// Formspree or Web3Forms endpoint and delete this route.
+// Sends from Resend's shared "onboarding@resend.dev" sender, which requires no
+// domain setup but only delivers to the email address on your Resend account.
+// To send from your own domain (e.g. contact@isaiasmartinez.dev) instead,
+// verify a domain in the Resend dashboard and update the `from` address below.
 // ---------------------------------------------------------------------------
 
 export const runtime = "nodejs";
@@ -60,20 +57,22 @@ export async function POST(request: Request) {
     );
   }
 
-  // ----- SEND EMAIL (uncomment after installing + configuring Resend) -------
-  // import { Resend } from "resend";
-  // const resend = new Resend(process.env.RESEND_API_KEY);
-  // await resend.emails.send({
-  //   from: "Portfolio <noreply@yourdomain.com>",
-  //   to: "isaiasm@stanford.edu",
-  //   replyTo: email,
-  //   subject: `New message from ${name}`,
-  //   text: message,
-  // });
-  // --------------------------------------------------------------------------
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const { error } = await resend.emails.send({
+    from: "Portfolio Contact <onboarding@resend.dev>",
+    to: site.email,
+    replyTo: email,
+    subject: `New message from ${name}`,
+    text: `${message}\n\n—\n${name} <${email}>`,
+  });
 
-  // For now, log so you can confirm submissions during local development.
-  console.log("[contact] new submission:", { name, email });
+  if (error) {
+    console.error("[contact] Resend error:", error);
+    return NextResponse.json(
+      { error: "Something went wrong sending your message. Please try emailing directly instead." },
+      { status: 502 },
+    );
+  }
 
   return NextResponse.json({ ok: true });
 }

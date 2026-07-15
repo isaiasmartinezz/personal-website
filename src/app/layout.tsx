@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { site } from "@/data/site";
 import { Nav } from "@/components/Nav";
@@ -36,9 +38,11 @@ export const metadata: Metadata = {
   creator: site.name,
   keywords: [
     site.name,
-    "computer science",
-    "machine learning systems",
-    "distributed systems",
+    "software engineer",
+    "AI engineer",
+    "full-stack developer",
+    "bioengineering",
+    "healthcare technology",
     "portfolio",
     "Stanford",
   ],
@@ -98,6 +102,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
