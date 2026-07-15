@@ -65,4 +65,22 @@ export const publications: Publication[] = [
       { label: "Read the abstract", href: "https://surgery.stanford.edu/holman/2024/L-WNT-upregulates-adult-hepatic-stem-cells.html" },
     ],
   },
+  {
+    title: "Exploring the Role of Wnt Signaling in the Liver",
+    authors: [
+      "Isaias Martinez",
+      "Greta Cywinska",
+      "Joshua Badshah",
+      "Melanie Marin",
+      "Danna Cruz",
+      "Fabiana Aellos",
+      "Bo Liu",
+      "Jill A. Helms",
+      "Varvara A. Kirchner",
+    ],
+    venue: "MCHRI DRIVE Program — also presented at the 2024 MCHRI Symposium and Stanford SURPS",
+    year: "2024",
+    abstract:
+      "Using lineage tracing in a Wnt-reporter mouse model, examined how adult Wnt-responsive hepatic stem cells respond to ischemia-reperfusion injury (IRI) in the liver. Found a sharp rise in Wnt-responsive cells after injury without a matching increase in proliferation, suggesting IRI recruits hepatic cells into a Wnt-responsive state alongside an inflammatory response — a step toward understanding how the liver regenerates after injury.",
+  },
 ];
