@@ -10,14 +10,14 @@ import type { SiteConfig } from "@/lib/types";
 export const site: SiteConfig = {
   name: "Isaias Martinez",
   shortName: "Isaias Martinez",
-  role: "Bioengineering B.S. (Honors) · Computer Science M.S. @ Stanford",
+  role: "Software Engineer & AI Builder · Stanford CS + Bioengineering",
 
   tagline:
-    "Bioengineer and software developer building AI and data systems for healthcare, security, and biomedical research.",
+    "Software engineer building full-stack apps and AI systems — with deep domain expertise in healthcare, security, and biomedical research.",
 
   // Used for <meta name="description"> and social share cards. ~150 chars.
   description:
-    "Isaias Martinez — Stanford Bioengineering (B.S., Honors) and Computer Science (M.S.). I build software, AI, and data systems across healthcare, security, and biomedical research.",
+    "Isaias Martinez — software engineer and AI builder at Stanford (CS M.S., Bioengineering B.S. Honors). Full-stack apps, LLMs, and data systems for healthcare and security.",
 
   // TODO: set this to your real deployed URL (used for canonical + sitemap + OG).
   url: "https://isaiasmartinez.dev",
@@ -29,8 +29,7 @@ export const site: SiteConfig = {
   socials: [
     { platform: "email", label: "Email", href: "mailto:isaiasm@stanford.edu" },
     { platform: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/isaias--martinez/" },
-    // TODO: add your GitHub handle if you'd like it shown:
-    // { platform: "github", label: "GitHub", href: "https://github.com/<you>" },
+    { platform: "github", label: "GitHub", href: "https://github.com/isaiasmartinezz" },
   ],
 
   // Top navigation. Order = display order.

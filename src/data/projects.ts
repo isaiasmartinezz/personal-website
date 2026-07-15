@@ -5,7 +5,7 @@ import type { Project } from "@/lib/types";
 // ---------------------------------------------------------------------------
 //   • `slug` must be unique and URL-safe (lowercase, hyphens).
 //   • `featured: true` gives the project a page at /projects/<slug> and pulls
-//     it onto the home page.
+//     it onto the home page. Order in this array = display order.
 //   • `tags` power the filter buttons on the Projects page.
 //   • `image` is optional; a gradient placeholder renders if omitted. Add real
 //     screenshots/diagrams in public/images/projects/ and set image + imageAlt.
@@ -14,64 +14,25 @@ import type { Project } from "@/lib/types";
 
 export const projects: Project[] = [
   {
-    slug: "fontan-virtual-stenting",
-    title: "Virtual Stenting in the Fontan Circulation",
+    slug: "coquest",
+    title: "CoQuest — Spontaneous Social Coordination",
     summary:
-      "B.S. honors thesis: simulating how virtual stent placement changes hemodynamics in the Fontan circulation at rest and during exercise, using patient-specific CFD.",
+      "A full-stack React Native + Firebase app that lets students broadcast and join spontaneous hangouts in real time — live in a 3-day pilot, 10 users generated 67 quests.",
     description:
-      "Patients with single-ventricle congenital heart disease undergo the Fontan operation, which can leave regions of elevated pressure and abnormal flow. This honors thesis — conducted in Dr. Alison Marsden's lab — builds patient-specific 3D models of the Fontan circulation in SimVascular, virtually places stents to modify the geometry, and runs computational fluid dynamics simulations to quantify the hemodynamic effects (pressure drop and flow) at rest and during exercise across multiple patients.",
-    category: "Research",
-    tags: ["Computational Fluid Dynamics", "SimVascular", "Cardiovascular", "Medical Imaging", "Python", "Simulation"],
-    featured: true,
-    year: "2026",
-    role: "Honors Thesis · Marsden Lab (advisor: Dr. Alison Marsden)",
-    highlights: [
-      "Built patient-specific 3D Fontan models from imaging in SimVascular: vessel pathing, segmentation, volumetric meshing, and centerline generation.",
-      "Virtually placed stents to modify conduit geometry and simulated pre- vs. post-stent hemodynamics with CFD.",
-      "Quantified pressure-drop and flow metrics at rest and during exercise across patients, reporting percent change after stenting.",
-    ],
-    links: [
-      { label: "Thesis (PDF)", href: "/projects/fontan-virtual-stenting-thesis.pdf", type: "paper" },
-    ],
-  },
-  {
-    slug: "circumflex-epvo",
-    title: "Circumflex — Neonatal Photoacoustic Oximeter",
-    summary:
-      "Two-quarter capstone: a miniaturized transesophageal photoacoustic oximetry probe to non-invasively measure pulmonary venous oxygen saturation in neonates with congenital heart disease.",
-    description:
-      "Neonates with congenital heart disease often need invasive measurements that extend NICU stays. As part of Team Circumflex (the BIOE 141A/B capstone), we designed the Esophageal Pulmonary Venous Oximeter (E-PVO): a flexible transesophageal probe positioned in the esophagus adjacent to the left atrium that uses photoacoustic sensing to non-invasively estimate pulmonary venous oxygen saturation — aiming to reduce length of stay in the NICU.",
-    category: "Research",
-    tags: ["Medical Devices", "Biosensors", "Photoacoustics", "Hardware", "Neonatal Care"],
-    featured: true,
-    year: "2026",
-    role: "Capstone Team (Circumflex) — BIOE 141A/B",
-    highlights: [
-      "Defined the clinical need and concept for a minimally invasive transesophageal photoacoustic oximeter for neonates.",
-      "Designed a flexible probe positioned adjacent to the left atrium to estimate pulmonary venous oxygen saturation.",
-      "Iterated the design across milestone reviews spanning requirements, prototyping, and validation planning.",
-    ],
-    links: [],
-  },
-  {
-    slug: "biosurveillance-digital-immune-system",
-    title: "Biosurveillance “Digital Immune System”",
-    summary:
-      "An interactive early-warning dashboard that fuses wastewater viral load, hospital admissions, and air-quality signals into a single biosecurity risk index with tiered alerts.",
-    description:
-      "Biological threats often emerge before they're formally detected. Founded and led at Stanford's Gordian Knot Center for National Security Innovation, this “digital immune system” inverts that pattern by detecting weak anomalies early across multiple public-health signals. The interactive dashboard — built in Python with Streamlit — ingests wastewater viral load, hospital admissions, and environmental air-quality data, computes rolling z-scores against recent baselines, and fuses them with adjustable weights into a unified risk score with High/Medium alert tiers. Users can upload their own CSVs or explore predefined outbreak and bioterror scenarios; planned extensions add machine learning and automated data ingestion.",
-    category: "Systems",
-    tags: ["Python", "Streamlit", "Anomaly Detection", "Time-Series", "Data Fusion", "Biosecurity", "Data Visualization"],
+      "College students have moments of free time but hesitate to reach out beyond their closest friends, so spontaneous hangouts rarely happen. CoQuest lets users broadcast lightweight, time-boxed \"quests\" (e.g. \"Jamba run in 5\") to a live campus map and to custom friend groups, so saying yes is a single tap and staying silent carries no social cost. Built end-to-end in React Native with a Firebase/Firestore backend, it was piloted with a real cohort of Stanford students, who used it to coordinate actual in-person meetups.",
+    category: "Web",
+    tags: ["React Native", "Firebase", "Firestore", "Full-Stack", "Real-Time Systems", "Mobile", "Geolocation"],
     featured: true,
     year: "2025",
-    role: "Founder & Project Lead — Gordian Knot Center for National Security Innovation",
+    role: "Team of 4 — CS278 (Social Computing)",
     highlights: [
-      "Fused wastewater, hospital-admission, and air-quality streams into a unified risk index using rolling z-scores and adjustable weights.",
-      "Built an interactive Streamlit dashboard with CSV upload, scenario simulation (baseline / outbreak / bioterror), trend and standardized plots, and tiered alerts.",
-      "Standardized heterogeneous signals to surface weak early-warning anomalies before they become obvious.",
+      "Built a full-stack mobile app (React Native + Firebase) with Firestore-backed real-time listeners for live quest feeds and RSVP counts, and Firebase Auth gated to campus email addresses.",
+      "Integrated the LocationIQ API to reverse-geocode quest locations onto a live map, with subscriptions scoped per-user to minimize data usage and keep updates lag-free.",
+      "Piloted with a real user cohort: 10 users generated 67 quests over a 3-day deployment, and iterative UX fixes cut average quest-creation time from 18 seconds to under 7.",
+      "Designed the data model (users, quests, groups) and read/write flows in Firestore, handling race conditions and async writes for consistent RSVP state.",
     ],
     links: [
-      { label: "Report (PDF)", href: "/projects/biosurveillance-report.pdf", type: "writeup" },
+      { label: "Code", href: "https://github.com/taralyn26/CoQuest-project", type: "code" },
     ],
   },
   {
@@ -96,6 +57,70 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "biosurveillance-digital-immune-system",
+    title: "Biosurveillance “Digital Immune System”",
+    summary:
+      "An interactive early-warning dashboard that fuses wastewater viral load, hospital admissions, and air-quality signals into a single biosecurity risk index with tiered alerts.",
+    description:
+      "Biological threats often emerge before they're formally detected. Founded and led at Stanford's Gordian Knot Center for National Security Innovation, this “digital immune system” inverts that pattern by detecting weak anomalies early across multiple public-health signals. The interactive dashboard — built in Python with Streamlit — ingests wastewater viral load, hospital admissions, and environmental air-quality data, computes rolling z-scores against recent baselines, and fuses them with adjustable weights into a unified risk score with High/Medium alert tiers. Users can upload their own CSVs or explore predefined outbreak and bioterror scenarios; planned extensions add machine learning and automated data ingestion.",
+    category: "Systems",
+    tags: ["Python", "Streamlit", "Anomaly Detection", "Time-Series", "Data Fusion", "Biosecurity", "Data Visualization"],
+    featured: true,
+    year: "2025",
+    role: "Founder & Project Lead — Gordian Knot Center for National Security Innovation",
+    highlights: [
+      "Fused wastewater, hospital-admission, and air-quality streams into a unified risk index using rolling z-scores and adjustable weights.",
+      "Built an interactive Streamlit dashboard with CSV upload, scenario simulation (baseline / outbreak / bioterror), trend and standardized plots, and tiered alerts.",
+      "Standardized heterogeneous signals to surface weak early-warning anomalies before they become obvious.",
+      "Authored a companion strategic brief outlining how the prototype could scale into a distributed national early-warning network.",
+    ],
+    links: [
+      { label: "Live Demo", href: "https://isaiasmartinezz-digitalimmunesystem-dashboard-ulzdkl.streamlit.app/", type: "demo" },
+      { label: "Code", href: "https://github.com/isaiasmartinezz/DigitalImmuneSystem", type: "code" },
+      { label: "Report (PDF)", href: "/projects/biosurveillance-report.pdf", type: "writeup" },
+    ],
+  },
+  {
+    slug: "fontan-virtual-stenting",
+    title: "Virtual Stenting in the Fontan Circulation",
+    summary:
+      "A patient-specific computational pipeline — 3D modeling, mesh generation, and CFD simulation — quantifying how virtual stent placement changes cardiovascular hemodynamics at rest and during exercise.",
+    description:
+      "Patients with single-ventricle congenital heart disease undergo the Fontan operation, which can leave regions of elevated pressure and abnormal flow. This honors thesis — conducted in Dr. Alison Marsden's lab — builds patient-specific 3D models of the Fontan circulation in SimVascular, virtually places stents to modify the geometry, and runs computational fluid dynamics simulations to quantify the hemodynamic effects (pressure drop and flow) at rest and during exercise across multiple patients.",
+    category: "Research",
+    tags: ["Computational Fluid Dynamics", "SimVascular", "Cardiovascular", "Medical Imaging", "Python", "Simulation"],
+    featured: true,
+    year: "2026",
+    role: "Honors Thesis · Marsden Lab (advisor: Dr. Alison Marsden)",
+    highlights: [
+      "Engineered a patient-specific 3D modeling and simulation pipeline: vessel pathing, segmentation, volumetric meshing, and centerline generation in SimVascular.",
+      "Scripted virtual stent placement to modify conduit geometry and ran CFD simulations comparing pre- vs. post-stent hemodynamics.",
+      "Quantified pressure-drop and flow metrics at rest and during exercise across patients, reporting percent change after stenting.",
+    ],
+    links: [
+      { label: "Thesis (PDF)", href: "/projects/fontan-virtual-stenting-thesis.pdf", type: "paper" },
+    ],
+  },
+  {
+    slug: "circumflex-epvo",
+    title: "Circumflex — Neonatal Photoacoustic Oximeter",
+    summary:
+      "Two-quarter capstone engineering a miniaturized transesophageal photoacoustic sensor and signal-processing pipeline to non-invasively estimate oxygen saturation in neonates with congenital heart disease.",
+    description:
+      "Neonates with congenital heart disease often need invasive measurements that extend NICU stays. As part of Team Circumflex (the BIOE 141A/B capstone), we designed the Esophageal Pulmonary Venous Oximeter (E-PVO): a flexible transesophageal probe positioned in the esophagus adjacent to the left atrium that uses photoacoustic sensing to non-invasively estimate pulmonary venous oxygen saturation — aiming to reduce length of stay in the NICU.",
+    category: "Research",
+    tags: ["Medical Devices", "Biosensors", "Photoacoustics", "Hardware", "Signal Processing", "Neonatal Care"],
+    featured: true,
+    year: "2026",
+    role: "Capstone Team (Circumflex) — BIOE 141A/B",
+    highlights: [
+      "Defined the clinical need and system requirements for a minimally invasive transesophageal photoacoustic oximeter for neonates.",
+      "Engineered a flexible probe and photoacoustic sensing/signal-processing approach to estimate pulmonary venous oxygen saturation.",
+      "Iterated the design across four milestone reviews spanning requirements, prototyping, and validation planning.",
+    ],
+    links: [],
+  },
+  {
     slug: "tripcompass-sf",
     title: "TripCompassSF — Personalized Itinerary Planner",
     summary:
@@ -111,6 +136,7 @@ export const projects: Project[] = [
       "Built a curated San Francisco POI catalog and a synthetic user–POI interaction dataset for training and evaluation.",
     ],
     links: [
+      { label: "Code", href: "https://github.com/isaiasmartinezz/cs221-finalproject", type: "code" },
       { label: "Report (PDF)", href: "/projects/tripcompass-cs221.pdf", type: "paper" },
     ],
   },
@@ -162,6 +188,27 @@ export const projects: Project[] = [
       "Closed a real usability gap: users previously had to stay next to the device to know when samples were ready.",
     ],
     links: [],
+  },
+  {
+    slug: "paingone-painguin",
+    title: "PainGone PainGuin — Pediatric Recovery Companion",
+    summary:
+      "A biodesign concept pairing a companion app with a physical plush penguin to help kids and parents manage recovery after pediatric tonsillectomy, cutting readmissions.",
+    description:
+      "Pediatric tonsillectomy patients face high 7-day readmission rates driven largely by dehydration and uncontrolled pain, and parent interviews revealed real, sometimes dangerous gaps in discharge comprehension (\"I only drank a few sips of water and fainted on day 2\"). PainGone PainGuin addresses this with a companion app — paired with a physical plush penguin — that tracks post-op recovery, answers questions via a chatbot, engages kids through a gamified \"PainGuin world,\" and connects directly to the care team. The team defined quantitative efficacy/usability/cost targets (e.g. ≥40% reduction in 7-day readmissions, ≤$20 total cost per patient) and mapped a path to adoption starting with a pilot in the Stanford CHARIOT Program.",
+    category: "Research",
+    tags: ["Healthcare Innovation", "Product Design", "User Research", "Biodesign"],
+    featured: false,
+    year: "2026",
+    role: "Team 6 — Biodesign Healthcare Innovation Course",
+    highlights: [
+      "Conducted patient/caregiver interviews to identify dangerous gaps in post-operative discharge comprehension.",
+      "Defined quantitative need criteria (efficacy, usability, cost, safety) grounded in clinical literature, e.g. ≥40% reduction in 7-day readmissions and ≤$20 cost per patient.",
+      "Designed a companion app + physical device concept and a business model with a staged path to hospital and insurer adoption.",
+    ],
+    links: [
+      { label: "Presentation", href: "https://www.canva.com/design/DAG5rcD2HdU/IsiQLIv7jgIYJvNsEnBm1A/view", type: "writeup" },
+    ],
   },
   {
     slug: "brain-injury-connection",
