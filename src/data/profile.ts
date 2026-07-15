@@ -8,23 +8,23 @@ import type { Profile } from "@/lib/types";
 
 export const profile: Profile = {
   bio: [
-    "I'm a Stanford student finishing a B.S. in Bioengineering (with Honors) and a coterminal M.S. in Computer Science. I build software, AI, and data systems that live where medicine meets engineering — from agentic AI for enterprise security to pipelines that quantify blood flow from MRI.",
-    "My work spans industry and research: developing agentic AI at IBM Verify, automating medical-device testing at Medtronic, building HIPAA-compliant kiosk software to widen healthcare access, and founding a biosurveillance “digital immune system” at Stanford's Gordian Knot Center. Across all of it I care about reliable, well-tested systems that make a measurable difference for people.",
+    "I'm a software engineer and AI builder finishing a coterminal M.S. in Computer Science and B.S. in Bioengineering (with Honors) at Stanford. I like building things end-to-end — full-stack apps with real users, LLM and agentic AI systems, and the data pipelines underneath them — and my bioengineering background gives me depth in healthcare and biosecurity that most software engineers don't have.",
+    "My work spans industry and research: developing agentic AI at IBM Verify, shipping a full-stack mobile app (React Native + Firebase) used by real students, implementing a GPT-2 Transformer from scratch, and founding a biosurveillance “digital immune system” at Stanford's Gordian Knot Center. Across all of it I care about reliable, well-tested systems that make a measurable difference for people.",
   ],
 
   lookingFor:
-    "I'm interested in software engineering and applied-ML roles at the intersection of healthcare, security, and data systems — and I'm always glad to talk about biomedical computing or interesting infrastructure problems.",
+    "I'm interested in software engineering and applied-AI/ML roles — especially where systems meet healthcare, security, or data infrastructure — and I'm always glad to talk about full-stack builds, LLMs, or interesting engineering problems.",
 
   focusAreas: [
-    "Software & AI for Healthcare",
-    "Machine Learning & LLMs",
-    "Biomedical Data & Imaging",
-    "Biosecurity & Health Systems",
+    "Software Engineering",
+    "AI & Machine Learning",
+    "Full-Stack & Systems",
+    "Health-Tech & Biosecurity",
   ],
 
   quickFacts: [
     { label: "Education", value: "B.S. Bioengineering · M.S. CS, Stanford" },
-    { label: "Focus", value: "Software · AI · Biomedical systems" },
+    { label: "Focus", value: "Software Engineering · AI · Health-Tech" },
     { label: "Location", value: "Stanford, CA" },
     { label: "Graduating", value: "M.S. June 2027" },
   ],
