@@ -37,20 +37,21 @@ export const projects: Project[] = [
   },
   {
     slug: "gpt2-from-scratch",
-    title: "Implementing GPT-2 from Scratch",
+    title: "Parameter-Efficient Adaptation of GPT-2",
     summary:
-      "A decoder-only Transformer built in the GPT-2 style, adapted across sentiment analysis, paraphrase detection, and sonnet generation — comparing full fine-tuning to LoRA, ReFT, and DPO.",
+      "Built a GPT-2 Transformer from scratch and benchmarked parameter-efficient adaptation methods (LoRA, ReFT, soft prompts) against full fine-tuning — ReFT matched or beat full fine-tuning accuracy using 0.02% of the trainable parameters.",
     description:
-      "For CS224N (NLP with Deep Learning), our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We study how one backbone adapts to three downstream tasks (sentiment analysis, paraphrase detection, and conditional sonnet generation) and compare standard fine-tuning against parameter-efficient methods (LoRA, ReFT) and preference alignment (DPO), measuring the tradeoff between task performance and trainable-parameter efficiency.",
+      "For CS224N (NLP with Deep Learning), our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We then used it as a shared backbone to study parameter-efficient adaptation across sentiment classification, paraphrase detection, and conditional sonnet generation, comparing full fine-tuning against LoRA, ReFT, and soft prompt tuning, and tuning decoding strategies for generation quality.",
     category: "ML",
-    tags: ["NLP", "Transformers", "PyTorch", "LoRA", "DPO", "LLMs"],
+    tags: ["NLP", "Transformers", "PyTorch", "LoRA", "ReFT", "LLMs"],
     featured: true,
     year: "2025",
     role: "Team of 3 — CS224N",
     highlights: [
       "Implemented causal multi-head self-attention, pre-LayerNorm Transformer blocks, and embedding weight tying from scratch.",
-      "Built end-to-end training and evaluation pipelines for sentiment and paraphrase classification on the GPT-2 backbone.",
-      "Compared full fine-tuning against LoRA / ReFT and DPO alignment, analyzing the performance-vs-efficiency tradeoff.",
+      "On sentiment classification (SST), ReFT reached 0.526 accuracy — edging out full fine-tuning's 0.520 — while updating only 0.0178% of parameters (vs. 100%).",
+      "On CFIMDB, ReFT held within 0.4 points of full fine-tuning's accuracy (0.976 vs. 0.980) while cutting peak GPU memory by roughly 62% (2,710 MB → 1,033 MB).",
+      "Systematically studied how LoRA/ReFT rank and intervention-layer placement trade off accuracy, overfitting, and compute across two datasets.",
     ],
     links: [
       { label: "Report (PDF)", href: "/projects/gpt2-cs224n.pdf", type: "paper" },
