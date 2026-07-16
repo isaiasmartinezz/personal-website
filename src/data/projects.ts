@@ -140,6 +140,8 @@ export const projects: Project[] = [
     tags: ["Machine Learning", "Beam Search", "Python", "Recommender Systems"],
     featured: false,
     year: "2025",
+    image: "/images/projects/tripcompass-sf.jpg",
+    imageAlt: "TripCompassSF itinerary planner showing a San Francisco route map and daily schedule",
     role: "Team of 2 — CS221",
     highlights: [
       "Trained a feed-forward user–POI satisfaction model over engineered features (interest match, popularity, pace × duration).",
