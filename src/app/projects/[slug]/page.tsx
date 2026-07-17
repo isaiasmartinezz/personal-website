@@ -6,13 +6,14 @@ import { Container } from "@/components/Container";
 import { Tag, LinkButton } from "@/components/ui";
 import { ProjectLinkIcon, ArrowRightIcon } from "@/components/Icons";
 import { EPVOCaseStudy } from "@/app/projects/[slug]/epvo-case-study";
+import { CoQuestCaseStudy } from "@/app/projects/[slug]/coquest-case-study";
 
 // Only featured projects get a detail page.
 const detailProjects = projects.filter((p) => p.featured);
 
-// This one project has a fully custom case-study layout instead of the
-// generic template below (see epvo-case-study.tsx).
-const CUSTOM_CASE_STUDY_SLUGS = new Set(["neonatal-photoacoustic-oximeter"]);
+// These projects have a fully custom case-study layout instead of the
+// generic template below (see epvo-case-study.tsx / coquest-case-study.tsx).
+const CUSTOM_CASE_STUDY_SLUGS = new Set(["neonatal-photoacoustic-oximeter", "coquest"]);
 
 // Pre-render every featured project at build time (static export friendly).
 export function generateStaticParams() {
@@ -51,6 +52,7 @@ export default async function ProjectDetailPage({
   if (!project) notFound();
 
   if (CUSTOM_CASE_STUDY_SLUGS.has(slug)) {
+    if (slug === "coquest") return <CoQuestCaseStudy />;
     return <EPVOCaseStudy />;
   }
 

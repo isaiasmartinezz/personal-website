@@ -92,12 +92,6 @@ export const header = {
   title: "Neonatal Photoacoustic Oximeter",
   intro:
     "Designed a miniaturized transesophageal photoacoustic sensing system to estimate pulmonary venous oxygen saturation in neonates with congenital heart disease. Across four milestones, our team combined computational modeling, patient-relevant anatomical analysis, benchtop hardware characterization, and hemoglobin-based signal validation.",
-  meta: [
-    { label: "Role", value: "Capstone Team Member" },
-    { label: "Course", value: "Stanford BIOE 141A/B" },
-    { label: "Duration", value: "Two quarters" },
-    { label: "Stage", value: "Benchtop validation" },
-  ],
   heroCaption:
     "Illustration of probe placement in the esophagus, the sensing window near the left atrium and pulmonary veins, and the resulting signal estimate.",
 };

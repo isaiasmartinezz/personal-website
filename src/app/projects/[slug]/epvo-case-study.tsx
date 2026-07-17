@@ -92,17 +92,6 @@ export function EPVOCaseStudy() {
           <p className="mt-5 text-lg leading-relaxed text-muted">{header.intro}</p>
         </div>
 
-        <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-10">
-          {header.meta.map((item) => (
-            <div key={item.label}>
-              <dt className="text-xs font-semibold uppercase tracking-wide text-subtle">
-                {item.label}
-              </dt>
-              <dd className="mt-1 text-sm font-medium text-fg">{item.value}</dd>
-            </div>
-          ))}
-        </dl>
-
         {project.image && (
           <figure className="mt-10">
             <div className="overflow-hidden rounded-xl border border-border">

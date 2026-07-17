@@ -143,3 +143,65 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   CoQuest case study — purple secondary accent, scoped to `.quest-accent` so
+   it never leaks into the site's global blue/navy palette.
+--------------------------------------------------------------------------- */
+.quest-accent {
+  --quest: #7c3aed;
+  --quest-soft: color-mix(in oklab, #7c3aed 10%, transparent);
+  --quest-border: color-mix(in oklab, #7c3aed 32%, transparent);
+  --quest-dot: color-mix(in oklab, #7c3aed 62%, transparent);
+  --quest-fg: #ffffff;
+}
+.dark .quest-accent {
+  --quest: #a78bfa;
+  --quest-soft: color-mix(in oklab, #a78bfa 16%, transparent);
+  --quest-border: color-mix(in oklab, #a78bfa 40%, transparent);
+  --quest-dot: color-mix(in oklab, #a78bfa 65%, transparent);
+  --quest-fg: #1e1033;
+}
+
+/* CoQuest mock quest card, appearing after "Post quest" in the demo. */
+@keyframes quest-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .quest-card-in {
+    animation: quest-card-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* Signal rings on the CoQuest hero: expand once and fade, then stay put. */
+@keyframes quest-ping-once {
+  0% {
+    transform: scale(0.55);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .quest-ping::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    border: 1px solid var(--quest, #7c3aed);
+    animation: quest-ping-once 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--ping-delay, 0ms);
+  }
+}
