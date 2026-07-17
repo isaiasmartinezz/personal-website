@@ -154,6 +154,11 @@
   --quest-border: color-mix(in oklab, #7c3aed 32%, transparent);
   --quest-dot: color-mix(in oklab, #7c3aed 62%, transparent);
   --quest-fg: #ffffff;
+  --quest-map-bg: #eef3ef;
+  --quest-map-green: #cfe8d6;
+  --quest-map-road: #ffffff;
+  --quest-map-road-border: #dbe6de;
+  --quest-map-building: #e2e9e4;
 }
 .dark .quest-accent {
   --quest: #a78bfa;
@@ -161,6 +166,11 @@
   --quest-border: color-mix(in oklab, #a78bfa 40%, transparent);
   --quest-dot: color-mix(in oklab, #a78bfa 65%, transparent);
   --quest-fg: #1e1033;
+  --quest-map-bg: #101512;
+  --quest-map-green: #1c2e22;
+  --quest-map-road: #232b26;
+  --quest-map-road-border: #2c3630;
+  --quest-map-building: #1c2420;
 }
 
 /* ---------------------------------------------------------------------------

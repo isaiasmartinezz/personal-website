@@ -36,6 +36,7 @@ import {
   governanceFraming,
   failureModes,
   failureModePrinciple,
+  contributionsIntro,
   contributionGroups,
   systemDecisions,
   demonstrated,
@@ -336,7 +337,8 @@ export function BiosurveillanceCaseStudy() {
       {/* ---------------- Contributions ---------------- */}
       <Shell className="mt-20">
         <div id="contributions" className="scroll-mt-32">
-          <SectionHeading eyebrow="My role" title="My contributions" />
+          <SectionHeading eyebrow="My role" title="Built end to end, on my own" />
+          <p className="mb-6 max-w-2xl text-sm leading-relaxed text-muted">{contributionsIntro}</p>
           <ContributionSection groups={contributionGroups} />
         </div>
 

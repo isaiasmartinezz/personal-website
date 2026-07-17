@@ -149,7 +149,6 @@ export const immuneResponseFlow = ["Sense", "Standardize", "Fuse", "Interpret", 
 export const factsMetrics: CaseStudyMetric[] = [
   { value: "3", label: "Independent signal streams" },
   { value: "28 days", label: "Example rolling baseline window", note: "Configurable default" },
-  { value: "1", label: "Fused risk index" },
   { value: "3", label: "Synthetic scenario modes" },
   { value: "4", label: "Operational alert states" },
 ];
@@ -636,6 +635,9 @@ export const failureModePrinciple =
 // ---------------------------------------------------------------------------
 // My contributions
 // ---------------------------------------------------------------------------
+export const contributionsIntro =
+  "Unlike the team projects elsewhere in this portfolio, this one was mine alone: I founded it, and I conceived, designed, and built every part of it myself — the framing and use case, the detection pipeline, the interactive dashboard, and both the technical report and the strategic brief.";
+
 export const contributionGroups: ContributionGroup[] = [
   {
     category: "Concept and strategy",
