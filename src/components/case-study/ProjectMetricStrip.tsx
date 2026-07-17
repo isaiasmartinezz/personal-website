@@ -3,9 +3,10 @@ import type { CaseStudyMetric as CoQuestMetric } from "@/data/coquest-case-study
 import type { CaseStudyMetric as GPT2Metric } from "@/data/gpt2-case-study";
 import type { CaseStudyMetric as BiosurvMetric } from "@/data/biosurveillance-case-study";
 import type { CaseStudyMetric as FontanMetric } from "@/data/fontan-case-study";
+import type { CaseStudyMetric as CentrifugeMetric } from "@/data/centrifuge-case-study";
 import { cn } from "@/lib/utils";
 
-type Metric = EPVOMetric | CoQuestMetric | GPT2Metric | BiosurvMetric | FontanMetric;
+type Metric = EPVOMetric | CoQuestMetric | GPT2Metric | BiosurvMetric | FontanMetric | CentrifugeMetric;
 
 // A restrained "at a glance" metric row: one bordered strip divided by rules,
 // 2x2 on mobile, a single row on desktop (4 or 5 columns). Deliberately not a

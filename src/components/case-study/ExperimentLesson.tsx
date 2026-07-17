@@ -1,7 +1,12 @@
 import type { ExperimentLessonEntry } from "@/data/gpt2-case-study";
-import type { ChallengeEntry } from "@/data/fontan-case-study";
+import type { ChallengeEntry as FontanChallengeEntry } from "@/data/fontan-case-study";
+import type { ChallengeEntry as CentrifugeChallengeEntry } from "@/data/centrifuge-case-study";
 
-export function ExperimentLesson({ entries }: { entries: (ExperimentLessonEntry | ChallengeEntry)[] }) {
+export function ExperimentLesson({
+  entries,
+}: {
+  entries: (ExperimentLessonEntry | FontanChallengeEntry | CentrifugeChallengeEntry)[];
+}) {
   return (
     <div className="space-y-6">
       {entries.map((c, i) => (

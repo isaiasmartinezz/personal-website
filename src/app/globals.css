@@ -246,6 +246,24 @@
   --fontan-mixed: #f0917d;
 }
 
+/* ---------------------------------------------------------------------------
+   Centrifuge case study — operating-state accent colors, scoped to
+   `.centrifuge-accent`. Every usage pairs color with a text label and icon,
+   never color alone.
+--------------------------------------------------------------------------- */
+.centrifuge-accent {
+  --cf-ready: #2563eb;
+  --cf-active: #b45309;
+  --cf-complete: #059669;
+  --cf-fault: #e2725b;
+}
+.dark .centrifuge-accent {
+  --cf-ready: #60a5fa;
+  --cf-active: #fbbf24;
+  --cf-complete: #34d399;
+  --cf-fault: #f0917d;
+}
+
 /* CoQuest mock quest card, appearing after "Post quest" in the demo. */
 @keyframes quest-card-in {
   from {
