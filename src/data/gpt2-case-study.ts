@@ -128,7 +128,6 @@ export const header = {
   meta: [
     { label: "Role", value: "Machine Learning Engineer" },
     { label: "Team", value: "3" },
-    { label: "Course", value: "CS224N" },
     { label: "Backbone", value: "GPT-2 small" },
     { label: "Tasks", value: "3" },
   ],
@@ -301,7 +300,7 @@ export const datasetTable: DatasetRow[] = [
 // Experimental workflow
 // ---------------------------------------------------------------------------
 export const pipelineStages = [
-  "Course dataset",
+  "Source dataset",
   "Tokenize & batch",
   "Load shared pretrained backbone",
   "Apply adaptation method",

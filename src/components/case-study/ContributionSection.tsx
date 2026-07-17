@@ -1,8 +1,9 @@
 import type { ContributionGroup as CoQuestGroup } from "@/data/coquest-case-study";
 import type { ContributionGroup as GPT2Group } from "@/data/gpt2-case-study";
+import type { ContributionGroup as BiosurvGroup } from "@/data/biosurveillance-case-study";
 import { cn } from "@/lib/utils";
 
-type Group = CoQuestGroup | GPT2Group;
+type Group = CoQuestGroup | GPT2Group | BiosurvGroup;
 
 // Grouped (not flat) contribution list — these were team projects, so
 // statements are phrased as "contributed to" / "helped," never sole

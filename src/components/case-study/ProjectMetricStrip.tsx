@@ -1,9 +1,10 @@
 import type { CaseStudyMetric as EPVOMetric } from "@/data/epvo-case-study";
 import type { CaseStudyMetric as CoQuestMetric } from "@/data/coquest-case-study";
 import type { CaseStudyMetric as GPT2Metric } from "@/data/gpt2-case-study";
+import type { CaseStudyMetric as BiosurvMetric } from "@/data/biosurveillance-case-study";
 import { cn } from "@/lib/utils";
 
-type Metric = EPVOMetric | CoQuestMetric | GPT2Metric;
+type Metric = EPVOMetric | CoQuestMetric | GPT2Metric | BiosurvMetric;
 
 // A restrained "at a glance" metric row: one bordered strip divided by rules,
 // 2x2 on mobile, a single row on desktop (4 or 5 columns). Deliberately not a

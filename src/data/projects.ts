@@ -37,7 +37,7 @@ export const projects: Project[] = [
     year: "2025",
     image: "/images/projects/coquest.jpg",
     imageAlt: "CoQuest's live campus map showing quest pins near Stanford landmarks",
-    role: "Team of 4 — CS278 (Social Computing)",
+    role: "Team of 4 — Social Computing",
     highlights: [
       "Built a full-stack mobile app (React Native + Firebase) with Firestore-backed real-time listeners for live quest feeds and RSVP counts, and Firebase Auth gated to campus email addresses.",
       "Integrated the LocationIQ API to reverse-geocode quest locations onto a live map, with subscriptions scoped per-user to minimize data usage and keep updates lag-free.",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     summary:
       "Built a GPT-2 Transformer from scratch and benchmarked parameter-efficient adaptation methods (LoRA, ReFT, soft prompts) against full fine-tuning — ReFT matched or beat full fine-tuning accuracy using 0.02% of the trainable parameters.",
     description:
-      "For CS224N (NLP with Deep Learning), our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We then used it as a shared backbone to study parameter-efficient adaptation across sentiment classification, paraphrase detection, and conditional sonnet generation, comparing full fine-tuning against LoRA, ReFT, and soft prompt tuning, and tuning decoding strategies for generation quality.",
+      "Our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We then used it as a shared backbone to study parameter-efficient adaptation across sentiment classification, paraphrase detection, and conditional sonnet generation, comparing full fine-tuning against LoRA, ReFT, and soft prompt tuning, and tuning decoding strategies for generation quality.",
     category: "ML",
     tags: [
       "Python",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     year: "2025",
     image: "/images/projects/gpt2-from-scratch.jpg",
     imageAlt: "Bar chart comparing peak GPU memory usage across fine-tuning methods on SST",
-    role: "Team of 3 — CS224N",
+    role: "Team of 3",
     highlights: [
       "Implemented causal multi-head self-attention, pre-LayerNorm Transformer blocks, and embedding weight tying from scratch.",
       "On sentiment classification (SST), ReFT reached 0.526 accuracy — edging out full fine-tuning's 0.520 — while updating only 0.0178% of parameters (vs. 100%).",
@@ -92,7 +92,19 @@ export const projects: Project[] = [
     description:
       "Biological threats often emerge before they're formally detected. Founded and led at Stanford's Gordian Knot Center for National Security Innovation, this “digital immune system” inverts that pattern by detecting weak anomalies early across multiple public-health signals. The interactive dashboard — built in Python with Streamlit — ingests wastewater viral load, hospital admissions, and environmental air-quality data, computes rolling z-scores against recent baselines, and fuses them with adjustable weights into a unified risk score with High/Medium alert tiers. Users can upload their own CSVs or explore predefined outbreak and bioterror scenarios; planned extensions add machine learning and automated data ingestion.",
     category: "Systems",
-    tags: ["Python", "Streamlit", "Anomaly Detection", "Time-Series", "Data Fusion", "Biosecurity", "Data Visualization"],
+    tags: [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "Time-Series Analysis",
+      "Rolling Statistics",
+      "Anomaly Detection",
+      "Data Fusion",
+      "Data Visualization",
+      "Scenario Simulation",
+      "Biosecurity",
+      "Public-Health Surveillance",
+    ],
     featured: true,
     year: "2025",
     image: "/images/projects/biosurveillance-digital-immune-system.jpg",
@@ -144,7 +156,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/projects/neonatal-photoacoustic-oximeter.jpg",
     imageAlt: "Illustration of the E-PVO probe positioned transesophageally near the left atrium and pulmonary veins, with a sample oxygen-saturation readout",
-    role: "Capstone Team Member — BIOE 141A/B",
+    role: "Capstone Team Member",
     highlights: [
       "Contributed to defining the clinical need and system requirements for a minimally invasive transesophageal photoacoustic oximeter for neonates.",
       "Our team engineered a flexible probe and photoacoustic sensing/signal-processing approach to estimate pulmonary venous oxygen saturation.",
@@ -163,7 +175,7 @@ export const projects: Project[] = [
     year: "2025",
     image: "/images/projects/tripcompass-sf.jpg",
     imageAlt: "TripCompassSF itinerary planner showing a San Francisco route map and daily schedule",
-    role: "Team of 2 — CS221",
+    role: "Team of 2",
     highlights: [
       "Trained a feed-forward user–POI satisfaction model over engineered features (interest match, popularity, pace × duration).",
       "Integrated the model into a beam-search planner that assembles feasible itineraries under time, budget, and opening-hour constraints.",
@@ -222,7 +234,7 @@ export const projects: Project[] = [
     year: "2024",
     image: "/images/projects/centrifuge.jpg",
     imageAlt: "The rebuilt centrifuge prototype with its LCD control display reading \"Press Start To Begin\"",
-    role: "Team 17 — Bioengineering Design",
+    role: "Bioengineering Team",
     highlights: [
       "Added color-coded phase indicators (pre-run, centrifugation, post-run) and audible cues at run start and finish.",
       "Closed a real usability gap: users previously had to stay next to the device to know when samples were ready.",
@@ -242,7 +254,7 @@ export const projects: Project[] = [
     year: "2026",
     image: "/images/projects/paingone-painguin.jpg",
     imageAlt: "The PainGuin companion app's recovery dashboard next to the physical plush penguin",
-    role: "Team 6 — Biodesign Healthcare Innovation Course",
+    role: "Biodesign Team",
     highlights: [
       "Conducted patient/caregiver interviews to identify dangerous gaps in post-operative discharge comprehension.",
       "Defined quantitative need criteria (efficacy, usability, cost, safety) grounded in clinical literature, e.g. ≥40% reduction in 7-day readmissions and ≤$20 cost per patient.",

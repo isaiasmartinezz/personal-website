@@ -32,6 +32,8 @@ export interface WalkthroughStage {
   eyebrow: string;
   title: string;
   points: string[];
+  image: string;
+  imageAlt: string;
 }
 
 export interface PrincipleGroup {
@@ -106,7 +108,6 @@ export const header = {
   meta: [
     { label: "Role", value: "Product & Engineering Team" },
     { label: "Team", value: "4 people" },
-    { label: "Course", value: "CS 278" },
     { label: "Pilot", value: "3 days" },
     { label: "Stack", value: "React Native + Firebase" },
   ],
@@ -128,10 +129,14 @@ export const activitySignals = [
 // Mock "Broadcast a quest" demo
 // ---------------------------------------------------------------------------
 export const questDemoOptions = {
-  activities: ["Jamba run", "Quick lunch", "Study session", "Board game night"],
-  times: ["In 5 minutes", "In 20 minutes", "Tonight at 8:30"],
-  audiences: ["Dorm friends", "Study group", "Whole campus"],
-  locations: ["Tresidder", "Green Library", "Arrillaga"],
+  activities: ["Quick boba run", "Study session", "Late night food?", "Board game night"],
+  times: ["Now", "In 30 min", "Tonight"],
+  audiences: ["Study buddies", "Dorm friends", "Whole campus"],
+  locations: [
+    { label: "Coupa Café, Green Library", mapLabel: "Green Library" },
+    { label: "Tresidder", mapLabel: "Tresidder" },
+    { label: "Arrillaga", mapLabel: "Arrillaga" },
+  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -213,6 +218,8 @@ export const walkthroughStages: WalkthroughStage[] = [
       "Users can browse without committing",
       "Hosted and available quests are visually differentiated",
     ],
+    image: "/images/projects/coquest-discover.jpg",
+    imageAlt: "CoQuest map screen showing quest pins near Stanford landmarks, next to a nearby-quests list",
   },
   {
     id: "browse",
@@ -223,6 +230,8 @@ export const walkthroughStages: WalkthroughStage[] = [
       "A filtered list for users who prefer structured browsing",
       "Complements the ambient map experience",
     ],
+    image: "/images/projects/coquest-browse.jpg",
+    imageAlt: "CoQuest dashboard screen showing upcoming hosted quests, next to sort and filter controls",
   },
   {
     id: "broadcast",
@@ -235,6 +244,8 @@ export const walkthroughStages: WalkthroughStage[] = [
       "Audience selection",
       "Location lookup",
     ],
+    image: "/images/projects/coquest-broadcast.jpg",
+    imageAlt: "CoQuest create-quest screen with title, timing, location, and audience fields, next to an audience picker",
   },
   {
     id: "circles",
@@ -246,6 +257,8 @@ export const walkthroughStages: WalkthroughStage[] = [
       "Group membership is not publicly displayed",
       "Quests may target a selected circle rather than the entire campus",
     ],
+    image: "/images/projects/coquest-circles.jpg",
+    imageAlt: "CoQuest group management screen showing private audience groups, next to a private-group explainer card",
   },
 ];
 

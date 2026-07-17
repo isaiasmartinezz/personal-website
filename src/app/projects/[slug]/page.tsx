@@ -8,17 +8,19 @@ import { ProjectLinkIcon, ArrowRightIcon } from "@/components/Icons";
 import { EPVOCaseStudy } from "@/app/projects/[slug]/epvo-case-study";
 import { CoQuestCaseStudy } from "@/app/projects/[slug]/coquest-case-study";
 import { GPT2CaseStudy } from "@/app/projects/[slug]/gpt2-case-study";
+import { BiosurveillanceCaseStudy } from "@/app/projects/[slug]/biosurveillance-case-study";
 
 // Only featured projects get a detail page.
 const detailProjects = projects.filter((p) => p.featured);
 
 // These projects have a fully custom case-study layout instead of the
 // generic template below (see epvo-case-study.tsx / coquest-case-study.tsx /
-// gpt2-case-study.tsx).
+// gpt2-case-study.tsx / biosurveillance-case-study.tsx).
 const CUSTOM_CASE_STUDY_SLUGS = new Set([
   "neonatal-photoacoustic-oximeter",
   "coquest",
   "gpt2-from-scratch",
+  "biosurveillance-digital-immune-system",
 ]);
 
 // Pre-render every featured project at build time (static export friendly).
@@ -60,6 +62,7 @@ export default async function ProjectDetailPage({
   if (CUSTOM_CASE_STUDY_SLUGS.has(slug)) {
     if (slug === "coquest") return <CoQuestCaseStudy />;
     if (slug === "gpt2-from-scratch") return <GPT2CaseStudy />;
+    if (slug === "biosurveillance-digital-immune-system") return <BiosurveillanceCaseStudy />;
     return <EPVOCaseStudy />;
   }
 

@@ -297,7 +297,7 @@ export function EPVOCaseStudy() {
             </div>
           </div>
           <p className="mt-8 max-w-2xl text-sm leading-relaxed text-subtle">
-            Taken together, this capstone was a successful de-risking effort: it established
+            Taken together, this project was a successful de-risking effort: it established
             technical feasibility questions across simulation, anatomy, and hardware, and
             defined the specific validation work still required before oxygen saturation
             itself can be measured experimentally.

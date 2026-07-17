@@ -224,11 +224,7 @@ export function CoQuestCaseStudy() {
       <Shell className="mt-20">
         <div id="experience" className="scroll-mt-32">
           <SectionHeading eyebrow="Experience" title="A walk through the product" />
-          <ProductWalkthrough
-            stages={walkthroughStages}
-            image={project.image ?? "/images/projects/coquest.jpg"}
-            imageAlt={project.imageAlt ?? header.title}
-          />
+          <ProductWalkthrough stages={walkthroughStages} />
         </div>
       </Shell>
 

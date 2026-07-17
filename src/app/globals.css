@@ -186,6 +186,30 @@
   --m-linear: #94a3b8;
 }
 
+/* ---------------------------------------------------------------------------
+   Biosurveillance case study — signal + alert-tier accent colors, scoped to
+   `.biosurv-accent`. Every usage of these pairs color with a text label, so
+   nothing is communicated by color alone.
+--------------------------------------------------------------------------- */
+.biosurv-accent {
+  --sig-wastewater: #0ea5e9;
+  --sig-hospital: #e11d48;
+  --sig-env: #059669;
+  --sig-fused: #6d28d9;
+  --alert-low: #3b82f6;
+  --alert-medium: #d97706;
+  --alert-high: #dc2626;
+}
+.dark .biosurv-accent {
+  --sig-wastewater: #38bdf8;
+  --sig-hospital: #fb7185;
+  --sig-env: #34d399;
+  --sig-fused: #c4b5fd;
+  --alert-low: #93c5fd;
+  --alert-medium: #fbbf24;
+  --alert-high: #f87171;
+}
+
 /* CoQuest mock quest card, appearing after "Post quest" in the demo. */
 @keyframes quest-card-in {
   from {
