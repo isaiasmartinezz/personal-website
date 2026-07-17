@@ -99,7 +99,7 @@ export const projects: Project[] = [
     featured: true,
     year: "2026",
     image: "/images/projects/fontan-virtual-stenting.jpg",
-    imageAlt: "Reconstructed 3D patient-specific model of the Fontan circulation",
+    imageAlt: "Pipeline from 3D patient model to virtual stent placement to CFD pressure simulation, with a before/after pressure comparison",
     role: "Honors Thesis · Marsden Lab (advisor: Dr. Alison Marsden)",
     highlights: [
       "Engineered a patient-specific 3D modeling and simulation pipeline: vessel pathing, segmentation, volumetric meshing, and centerline generation in SimVascular.",
@@ -187,14 +187,16 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    slug: "v3-centrifuge",
-    title: "V3 Centrifuge — Phase-Aware Notifications",
+    slug: "centrifuge",
+    title: "Centrifuge — Phase-Aware Notifications",
     summary:
       "Redesigned a benchtop centrifuge with color-coded visual and auditory cues for each operation phase, so users can safely step away during long runs.",
     category: "Research",
     tags: ["Embedded Systems", "Hardware", "UX", "Bioengineering"],
     featured: false,
     year: "2024",
+    image: "/images/projects/centrifuge.jpg",
+    imageAlt: "The rebuilt centrifuge prototype with its LCD control display reading \"Press Start To Begin\"",
     role: "Team 17 — Bioengineering Design",
     highlights: [
       "Added color-coded phase indicators (pre-run, centrifugation, post-run) and audible cues at run start and finish.",
