@@ -85,15 +85,28 @@ export default async function ProjectDetailPage({
           ))}
         </div>
 
-        {project.image && (
+        {project.video ? (
           <div className="mt-10 overflow-hidden rounded-xl border border-border">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={project.image}
-              alt={project.imageAlt ?? `${project.title} screenshot`}
+            <video
+              controls
+              preload="metadata"
+              poster={project.image}
               className="w-full"
-            />
+            >
+              <source src={project.video} type="video/mp4" />
+            </video>
           </div>
+        ) : (
+          project.image && (
+            <div className="mt-10 overflow-hidden rounded-xl border border-border">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={project.image}
+                alt={project.imageAlt ?? `${project.title} screenshot`}
+                className="w-full"
+              />
+            </div>
+          )
         )}
 
         {project.description && (

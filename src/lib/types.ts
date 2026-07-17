@@ -115,6 +115,9 @@ export interface Project {
   /** Thumbnail path inside /public. Optional — a placeholder renders if omitted. */
   image?: string;
   imageAlt?: string;
+  /** Optional video path inside /public (featured/detail pages only). Shown
+   * instead of the image, using `image` as the poster frame if both are set. */
+  video?: string;
   links: ProjectLink[];
   /** Bullet highlights shown on the detail page. */
   highlights?: string[];

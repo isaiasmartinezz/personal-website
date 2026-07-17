@@ -215,6 +215,8 @@ export const projects: Project[] = [
     tags: ["Healthcare Innovation", "Product Design", "User Research", "Biodesign"],
     featured: false,
     year: "2026",
+    image: "/images/projects/paingone-painguin.jpg",
+    imageAlt: "The PainGuin companion app's recovery dashboard next to the physical plush penguin",
     role: "Team 6 — Biodesign Healthcare Innovation Course",
     highlights: [
       "Conducted patient/caregiver interviews to identify dangerous gaps in post-operative discharge comprehension.",
@@ -230,10 +232,15 @@ export const projects: Project[] = [
     title: "Brain Injury Connection — Accessible Redesign",
     summary:
       "As product manager with Develop for Good, led an accessible, cognitive-friendly website redesign for acquired-brain-injury patients and caregivers.",
+    description:
+      "Brain Injury Connection (BIC) needed an accessible, easy-to-navigate home for its community of ABI survivors, caregivers, and families. As product manager with Develop for Good, I led the redesign end-to-end: defining requirements, mapping user flows, and coordinating a team of engineers and designers. The rebuilt site foregrounds a 988 crisis-line banner, a filterable resource library connecting families to local support organizations, an events and community hub, and an FAQ built from real caregiver questions — all designed around cognitive-friendly, low-friction navigation for users who may themselves be recovering from brain injury.",
     category: "Web",
     tags: ["Product Management", "Accessibility", "UX", "Web"],
-    featured: false,
+    featured: true,
     year: "2025",
+    image: "/images/projects/brain-injury-connection.jpg",
+    imageAlt: "The redesigned Brain Injury Connection website shown across laptop and tablet screens",
+    video: "/videos/brain-injury-connection.mp4",
     role: "Product Manager — Develop for Good",
     highlights: [
       "Led end-to-end redesign of an accessible, cognitive-friendly website for ABI patients and caregivers.",
