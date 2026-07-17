@@ -326,7 +326,11 @@ export function CoQuestCaseStudy() {
             CoQuest was built by a four-person team. The contributions below describe what I
             personally worked on within that team, not sole ownership of the project.
           </p>
-          <ContributionSection groups={contributionGroups} />
+          <ContributionSection
+            groups={contributionGroups}
+            borderClassName="border-[color:var(--quest-border)]"
+            textClassName="text-[color:var(--quest)]"
+          />
         </div>
       </Shell>
 
