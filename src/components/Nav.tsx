@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { CommandPalette } from "@/components/CommandPalette";
 import { MenuIcon, CloseIcon } from "@/components/Icons";
 import { cn } from "@/lib/utils";
 
@@ -73,6 +74,7 @@ export function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <CommandPalette />
           <ThemeToggle />
           <button
             type="button"

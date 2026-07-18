@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/ui";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
+import { ProjectFilmstrip } from "@/components/ProjectFilmstrip";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -18,7 +19,12 @@ export default function ProjectsPage() {
         title="Things I've built"
         lead="A mix of research prototypes, systems work, and side projects. Use the filters to narrow by topic or tech."
       />
+
       <div className="mt-10">
+        <ProjectFilmstrip projects={projects.filter((p) => p.image)} />
+      </div>
+
+      <div className="mt-12">
         <ProjectsExplorer projects={projects} />
       </div>
     </Container>

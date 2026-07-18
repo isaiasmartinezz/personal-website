@@ -3,9 +3,10 @@ import type { Project } from "@/lib/types";
 // ---------------------------------------------------------------------------
 // Projects
 // ---------------------------------------------------------------------------
-//   • `slug` must be unique and URL-safe (lowercase, hyphens).
-//   • `featured: true` gives the project a page at /projects/<slug> and pulls
-//     it onto the home page. Order in this array = display order.
+//   • `slug` must be unique and URL-safe (lowercase, hyphens). Every project
+//     gets a page at /projects/<slug>; `featured: true` additionally pulls it
+//     onto the home page. Order in this array = display order (also drives
+//     the /projects filmstrip).
 //   • `tags` power the filter buttons on the Projects page.
 //   • `image` is optional; a gradient placeholder renders if omitted. Add real
 //     screenshots/diagrams in public/images/projects/ and set image + imageAlt.
@@ -187,6 +188,8 @@ export const projects: Project[] = [
     title: "TripCompassSF — Personalized Itinerary Planner",
     summary:
       "Generates budget- and time-aware daily itineraries for San Francisco by pairing a learned user–POI satisfaction model with a beam-search planner.",
+    description:
+      "Generic \"top sights\" itineraries ignore what a specific traveler actually wants and rarely respect real time and budget limits. TripCompassSF addresses this in two parts: a feed-forward model learns to predict user–point-of-interest satisfaction from engineered features (interest match, popularity, pace × duration), and a beam-search planner uses those predictions to assemble day-by-day San Francisco itineraries that stay within time, budget, and opening-hour constraints. We built a curated SF point-of-interest catalog and a synthetic user–POI interaction dataset to train and evaluate the satisfaction model.",
     category: "ML",
     tags: ["Machine Learning", "Beam Search", "Python", "Recommender Systems"],
     featured: false,
@@ -209,6 +212,8 @@ export const projects: Project[] = [
     title: "4D Flow MRI Hepatic Flow Pipeline",
     summary:
       "A Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI to study Fontan hemodynamics and AVM risk.",
+    description:
+      "Fontan patients are prone to hepatic arteriovenous malformations (AVMs), but the hemodynamic signals linked to that risk are buried in large 4D Flow MRI datasets. As a researcher in the Marsden Cardiovascular Biomechanics Lab, I built a Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI scans using NumPy and SciPy, applies signal processing and pattern recognition to surface candidate AVM biomarkers, and validates and visualizes the results in Seaborn and Plotly. The pipeline is benchmarked reproducibly with Git/GitHub and Bash-based CI/CD so results can be regenerated and checked as the analysis evolves.",
     category: "Research",
     tags: ["Python", "NumPy", "SciPy", "Medical Imaging", "Signal Processing", "Data Visualization"],
     featured: false,
@@ -228,6 +233,8 @@ export const projects: Project[] = [
     title: "LLM Fallacy Detection",
     summary:
       "Benchmarked large language models for logical-fallacy detection and co-developed a detector with reproducible evaluation pipelines.",
+    description:
+      "Logical fallacies are easy for humans to miss and inconsistent for language models to catch, which makes fallacy detection a useful stress test for LLM reasoning. This project benchmarked several LLMs on the task, using Python (transformers, scikit-learn) to build baselines and report precision/recall/F1 across models. We curated datasets and prompts, implemented ETL and feature-engineering steps to keep the evaluation pipeline reproducible, and co-developed a fallacy detector, running ablation studies and error analysis to understand where and why each model's detection broke down.",
     category: "ML",
     tags: ["NLP", "LLMs", "Python", "scikit-learn", "Machine Learning"],
     featured: false,

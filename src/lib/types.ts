@@ -99,24 +99,24 @@ export interface ProjectLink {
 }
 
 export interface Project {
-  /** URL-safe id; becomes /projects/<slug> for featured projects. */
+  /** URL-safe id; every project gets a page at /projects/<slug>. */
   slug: string;
   title: string;
   /** One or two sentences for the card. */
   summary: string;
-  /** Longer body for the detail page (featured projects). */
+  /** Longer body for the detail page's Overview section. */
   description?: string;
   category: ProjectCategory;
   /** Tech + topic tags; also power the filter on the Projects page. */
   tags: string[];
-  /** Featured projects get a dedicated /projects/<slug> detail page. */
+  /** Featured projects also appear on the home page (and the project filmstrip). */
   featured: boolean;
   year: string;
   /** Thumbnail path inside /public. Optional — a placeholder renders if omitted. */
   image?: string;
   imageAlt?: string;
-  /** Optional video path inside /public (featured/detail pages only). Shown
-   * instead of the image, using `image` as the poster frame if both are set. */
+  /** Optional video path inside /public, shown on the detail page instead of
+   * the image (using `image` as the poster frame if both are set). */
   video?: string;
   links: ProjectLink[];
   /** Bullet highlights shown on the detail page. */

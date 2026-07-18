@@ -30,7 +30,7 @@ function Thumbnail({ project }: { project: Project }) {
 }
 
 export function ProjectCard({ project }: { project: Project }) {
-  const detailHref = project.featured ? `/projects/${project.slug}` : undefined;
+  const detailHref = `/projects/${project.slug}`;
 
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/40">
@@ -43,17 +43,13 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-lg font-semibold leading-snug">
-          {detailHref ? (
-            <Link
-              href={detailHref}
-              className="after:absolute after:inset-0 hover:text-accent"
-            >
-              {/* stretched link makes the whole card clickable for featured projects */}
-              {project.title}
-            </Link>
-          ) : (
-            project.title
-          )}
+          <Link
+            href={detailHref}
+            className="after:absolute after:inset-0 hover:text-accent"
+          >
+            {/* stretched link makes the whole card clickable */}
+            {project.title}
+          </Link>
         </h3>
 
         <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -88,15 +84,13 @@ export function ProjectCard({ project }: { project: Project }) {
               </a>
             );
           })}
-          {detailHref && (
-            <Link
-              href={detailHref}
-              className="relative z-10 ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent"
-            >
-              Details
-              <ArrowUpRightIcon className="size-4" />
-            </Link>
-          )}
+          <Link
+            href={detailHref}
+            className="relative z-10 ml-auto inline-flex items-center gap-1 text-sm font-medium text-accent"
+          >
+            Details
+            <ArrowUpRightIcon className="size-4" />
+          </Link>
         </div>
       </div>
     </article>

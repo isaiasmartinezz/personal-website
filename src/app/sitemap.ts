@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 import { projects } from "@/data/projects";
 
-// Auto-generated sitemap. New nav routes and featured projects are included
+// Auto-generated sitemap. New nav routes and projects are included
 // automatically because they're derived from the data files.
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -10,9 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = ["", "/resume", ...site.nav.map((n) => n.href)];
 
-  const projectRoutes = projects
-    .filter((p) => p.featured)
-    .map((p) => `/projects/${p.slug}`);
+  const projectRoutes = projects.map((p) => `/projects/${p.slug}`);
 
   return [...staticRoutes, ...projectRoutes].map((path) => ({
     url: `${base}${path}`,

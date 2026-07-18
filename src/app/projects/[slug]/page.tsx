@@ -12,8 +12,9 @@ import { BiosurveillanceCaseStudy } from "@/app/projects/[slug]/biosurveillance-
 import { FontanCaseStudy } from "@/app/projects/[slug]/fontan-case-study";
 import { CentrifugeCaseStudy } from "@/app/projects/[slug]/centrifuge-case-study";
 
-// Only featured projects get a detail page.
-const detailProjects = projects.filter((p) => p.featured);
+// Every project gets a detail page — `featured` only controls the home page
+// spotlight and card order, not whether a page exists.
+const detailProjects = projects;
 
 // These projects have a fully custom case-study layout instead of the
 // generic template below (see epvo-case-study.tsx / coquest-case-study.tsx /
@@ -28,7 +29,7 @@ const CUSTOM_CASE_STUDY_SLUGS = new Set([
   "centrifuge",
 ]);
 
-// Pre-render every featured project at build time (static export friendly).
+// Pre-render every project at build time (static export friendly).
 export function generateStaticParams() {
   return detailProjects.map((p) => ({ slug: p.slug }));
 }

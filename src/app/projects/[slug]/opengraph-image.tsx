@@ -4,8 +4,9 @@ import { site } from "@/data/site";
 
 // Per-project social share card — same visual system as the site-wide one in
 // src/app/opengraph-image.tsx, but with this project's title/category/tags so
-// a shared project link looks tailored instead of generic.
-const detailProjects = projects.filter((p) => p.featured);
+// a shared project link looks tailored instead of generic. Every project has
+// a detail page (see [slug]/page.tsx), so every project gets a card.
+const detailProjects = projects;
 
 export function generateStaticParams() {
   return detailProjects.map((p) => ({ slug: p.slug }));

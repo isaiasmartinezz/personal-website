@@ -144,6 +144,18 @@
   }
 }
 
+/* Hides the scrollbar on a native horizontally-scrollable track (e.g. the
+   project filmstrip) while keeping it fully scrollable by touch/trackpad/
+   keyboard — arrow buttons cover pointer users who'd otherwise have no
+   affordance. */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---------------------------------------------------------------------------
    CoQuest case study — purple secondary accent, scoped to `.quest-accent` so
    it never leaks into the site's global blue/navy palette.
