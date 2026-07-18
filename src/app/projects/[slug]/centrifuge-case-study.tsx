@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import {
@@ -314,8 +315,13 @@ export function CentrifugeCaseStudy() {
           <p className="mt-4 max-w-2xl text-sm italic leading-relaxed text-subtle">{motorControlNote}</p>
 
           <figure className="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={circuitDiagramImage.src} alt={circuitDiagramImage.alt} loading="lazy" className="w-full" />
+            <Image
+              src={circuitDiagramImage.src}
+              alt={circuitDiagramImage.alt}
+              width={circuitDiagramImage.width}
+              height={circuitDiagramImage.height}
+              className="h-auto w-full"
+            />
             <figcaption className="border-t border-border px-4 py-2.5 text-xs text-subtle">
               Full circuit schematic: optical sensing stage, motor and speaker MOSFET drivers, and the Arduino, LCD, and RGB LED connections.
             </figcaption>

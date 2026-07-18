@@ -8,7 +8,6 @@ import { LinkButton, Tag } from "@/components/ui";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SocialLinks } from "@/components/SocialLinks";
-import { GitHubActivity } from "@/components/GitHubActivity";
 import {
   MailIcon,
   FileTextIcon,
@@ -146,13 +145,6 @@ export default function Home() {
           </Link>
         </Container>
       )}
-
-      {/* ---------------- Recently shipped (live GitHub activity) ---------------- */}
-      <Container className="py-12">
-        <Reveal>
-          <GitHubActivity />
-        </Reveal>
-      </Container>
 
       {/* ---------------- CTA band ---------------- */}
       <Container className="py-12">

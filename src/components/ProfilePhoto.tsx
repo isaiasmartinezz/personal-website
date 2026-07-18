@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
@@ -46,8 +47,7 @@ export function ProfilePhoto({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- graceful onError fallback; swap for next/image once a real photo is committed.
-    <img
+    <Image
       // Callback ref catches the case where the image already 404'd during SSR
       // (before React attached onError) — checks completeness on mount.
       ref={(node) => {

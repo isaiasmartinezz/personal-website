@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@/components/Icons";
 
 function Flow({ steps }: { steps: string[] }) {
@@ -24,10 +25,10 @@ export function FabricationTracks({
 }: {
   enclosureExplanation: string[];
   enclosureFlow: string[];
-  enclosureImage: { src: string; alt: string };
+  enclosureImage: { src: string; alt: string; width: number; height: number };
   rotorExplanation: string[];
   rotorFlow: string[];
-  rotorImage: { src: string; alt: string };
+  rotorImage: { src: string; alt: string; width: number; height: number };
   rotorTradeoff: string;
 }) {
   return (
@@ -45,8 +46,13 @@ export function FabricationTracks({
           <Flow steps={enclosureFlow} />
         </div>
         <figure className="mt-4 overflow-hidden rounded-xl border border-border bg-surface">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={enclosureImage.src} alt={enclosureImage.alt} loading="lazy" className="w-full" />
+          <Image
+            src={enclosureImage.src}
+            alt={enclosureImage.alt}
+            width={enclosureImage.width}
+            height={enclosureImage.height}
+            className="h-auto w-full"
+          />
         </figure>
       </div>
 
@@ -63,8 +69,13 @@ export function FabricationTracks({
           <Flow steps={rotorFlow} />
         </div>
         <figure className="mt-4 overflow-hidden rounded-xl border border-border bg-surface">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={rotorImage.src} alt={rotorImage.alt} loading="lazy" className="w-full" />
+          <Image
+            src={rotorImage.src}
+            alt={rotorImage.alt}
+            width={rotorImage.width}
+            height={rotorImage.height}
+            className="h-auto w-full"
+          />
         </figure>
         <p className="mt-4 rounded-lg border border-border bg-surface-2 px-4 py-3 text-sm leading-relaxed text-fg">
           {rotorTradeoff}

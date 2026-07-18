@@ -28,6 +28,8 @@ export interface ReconstructionStage {
   body: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
 }
 
 export interface StentStep {
@@ -239,6 +241,8 @@ export const reconstructionStages: ReconstructionStage[] = [
     body: "Individual vessel surfaces were unioned and blended at complex junctions.",
     image: "/images/projects/fontan-model.jpg",
     imageAlt: "Reconstructed unified Fontan vascular model rendered as a smooth silver surface",
+    imageWidth: 1400,
+    imageHeight: 1159,
   },
   {
     title: "Truncated domain",
@@ -249,12 +253,16 @@ export const reconstructionStages: ReconstructionStage[] = [
     body: "Inlets and outlets were capped and assigned distinct boundary faces.",
     image: "/images/projects/fontan-capped.jpg",
     imageAlt: "Fontan vessel model with colored inlet and outlet cap faces marking the simulation boundary conditions",
+    imageWidth: 1035,
+    imageHeight: 1200,
   },
   {
     title: "Tetrahedral volume mesh",
     body: "The final fluid domain was discretized for finite-element simulation.",
     image: "/images/projects/fontan-mesh.jpg",
     imageAlt: "Tetrahedral volumetric mesh of a reconstructed Fontan vascular model",
+    imageWidth: 1400,
+    imageHeight: 1230,
   },
 ];
 
@@ -264,6 +272,8 @@ export const reconstructionEffortCaption =
 export const centerlineImage = {
   src: "/images/projects/fontan-centerline.jpg",
   alt: "Fontan vascular model with an extracted centerline running through the reconstructed conduit",
+  width: 1120,
+  height: 1200,
 };
 
 // ---------------------------------------------------------------------------
@@ -286,16 +296,22 @@ export const stentQualification =
 export const stentGridImage = {
   src: "/images/projects/fontan-virtual-stent-grid.jpg",
   alt: "Pre-stent, stenting-process, and post-stent geometry comparison for Fontan patients 18, 21, and 23",
+  width: 1120,
+  height: 1400,
 };
 
 export const stentDetailImage = {
   src: "/images/projects/fontan-stent-detail.jpg",
   alt: "Close-up of the virtual stent expansion region overlaid on a translucent Fontan vessel model, with capped inlet and outlet faces",
+  width: 1200,
+  height: 1193,
 };
 
 export const pressureFieldImage = {
   src: "/images/projects/fontan-pressure-field.jpg",
   alt: "Simulated pressure field on a Fontan vessel model before and after virtual stenting, colored from low (blue) to high (red) pressure",
+  width: 1600,
+  height: 899,
 };
 
 // ---------------------------------------------------------------------------

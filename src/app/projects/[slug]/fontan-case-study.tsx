@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import {
@@ -171,11 +172,13 @@ export function FontanCaseStudy() {
           <figure className="mt-10">
             <Reveal>
               <div className="overflow-hidden rounded-2xl border border-border bg-surface">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={project.image}
                   alt={project.imageAlt ?? header.title}
-                  className="w-full"
+                  width={1600}
+                  height={900}
+                  priority
+                  className="h-auto w-full"
                 />
               </div>
             </Reveal>
@@ -331,10 +334,15 @@ export function FontanCaseStudy() {
                 key={stage.title}
                 className="grid grid-cols-1 items-center gap-6 sm:grid-cols-[1fr_1.4fr] sm:gap-10"
               >
-                {stage.image ? (
+                {stage.image && stage.imageWidth && stage.imageHeight ? (
                   <div className="overflow-hidden rounded-xl border border-border bg-surface">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={stage.image} alt={stage.imageAlt} loading="lazy" className="w-full" />
+                    <Image
+                      src={stage.image}
+                      alt={stage.imageAlt ?? stage.title}
+                      width={stage.imageWidth}
+                      height={stage.imageHeight}
+                      className="h-auto w-full"
+                    />
                   </div>
                 ) : (
                   <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-dashed border-border bg-surface-2 text-center text-xs text-subtle">
@@ -350,12 +358,12 @@ export function FontanCaseStudy() {
 
             <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-[1fr_1.4fr] sm:gap-10">
               <div className="overflow-hidden rounded-xl border border-border bg-surface">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={centerlineImage.src}
                   alt={centerlineImage.alt}
-                  loading="lazy"
-                  className="w-full"
+                  width={centerlineImage.width}
+                  height={centerlineImage.height}
+                  className="h-auto w-full"
                 />
               </div>
               <div>
@@ -467,12 +475,12 @@ export function FontanCaseStudy() {
           <HemodynamicMetricExplainer metrics={metricExplainers} lesson={metricLesson} />
 
           <figure className="mt-10 overflow-hidden rounded-2xl border border-border bg-surface">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={pressureFieldImage.src}
               alt={pressureFieldImage.alt}
-              loading="lazy"
-              className="w-full"
+              width={pressureFieldImage.width}
+              height={pressureFieldImage.height}
+              className="h-auto w-full"
             />
             <figcaption className="border-t border-border px-4 py-2.5 text-xs text-subtle">
               A simulated pressure field before (left) and after (right) virtual stenting —

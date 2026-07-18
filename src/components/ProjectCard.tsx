@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/types";
 import { Tag } from "@/components/ui";
@@ -8,12 +9,12 @@ import { cn } from "@/lib/utils";
 function Thumbnail({ project }: { project: Project }) {
   if (project.image) {
     return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
+      <Image
         src={project.image}
         alt={project.imageAlt ?? `${project.title} preview`}
-        loading="lazy"
-        className="h-full w-full object-cover"
+        fill
+        sizes="(min-width: 640px) 50vw, 100vw"
+        className="object-cover"
       />
     );
   }

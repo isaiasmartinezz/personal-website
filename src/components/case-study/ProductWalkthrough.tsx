@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { WalkthroughStage } from "@/data/coquest-case-study";
 import { cn } from "@/lib/utils";
 
@@ -5,29 +6,22 @@ export function ProductWalkthrough({ stages }: { stages: WalkthroughStage[] }) {
   return (
     <div className="space-y-14">
       {stages.map((stage, i) => {
-        const isFocal = i === 0;
         const reversed = i % 2 === 1;
         return (
           <div
             key={stage.id}
             className={cn(
-              "grid grid-cols-1 items-center gap-8 sm:gap-10",
-              isFocal ? "sm:grid-cols-[1.3fr_1fr]" : "sm:grid-cols-[280px_1fr]",
-              reversed && !isFocal && "sm:[&>*:first-child]:order-2",
+              "grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.3fr_1fr] sm:gap-10",
+              reversed && "sm:[&>*:first-child]:order-2",
             )}
           >
-            <div
-              className={cn(
-                "overflow-hidden rounded-2xl border border-border bg-surface",
-                isFocal ? "aspect-[16/9]" : "aspect-[16/9] max-w-[320px] justify-self-center sm:justify-self-start",
-              )}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-surface">
+              <Image
                 src={stage.image}
                 alt={stage.imageAlt}
-                loading="lazy"
-                className="h-full w-full object-cover"
+                fill
+                sizes="(min-width: 640px) 55vw, 100vw"
+                className="object-cover"
               />
             </div>
             <div>

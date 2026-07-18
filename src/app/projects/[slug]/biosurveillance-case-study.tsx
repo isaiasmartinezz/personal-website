@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import {
@@ -143,11 +144,13 @@ export function BiosurveillanceCaseStudy() {
           <figure className="mt-10">
             <Reveal>
               <div className="overflow-hidden rounded-2xl border border-border bg-surface">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={project.image}
                   alt={project.imageAlt ?? header.title}
-                  className="w-full"
+                  width={1600}
+                  height={900}
+                  priority
+                  className="h-auto w-full"
                 />
               </div>
             </Reveal>

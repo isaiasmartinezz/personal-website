@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import {
@@ -95,11 +96,13 @@ export function EPVOCaseStudy() {
         {project.image && (
           <figure className="mt-10">
             <div className="overflow-hidden rounded-xl border border-border">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={project.image}
                 alt={project.imageAlt ?? header.title}
-                className="w-full"
+                width={1600}
+                height={900}
+                priority
+                className="h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 text-sm text-subtle">{header.heroCaption}</figcaption>

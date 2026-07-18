@@ -222,11 +222,15 @@ export const architectureFlows = [
 export const systemDiagramImage = {
   src: "/images/projects/centrifuge-system-diagram.jpg",
   alt: "Hand-drawn full system block diagram showing the user interface, control, sensing, and actuation subsystems and their signal connections",
+  width: 1400,
+  height: 1084,
 };
 
 export const circuitDiagramImage = {
   src: "/images/projects/centrifuge-circuit-diagram.jpg",
   alt: "Full circuit schematic showing the phototransistor and comparator sensing stage, Arduino, motor MOSFET driver, LCD, and speaker driver",
+  width: 1400,
+  height: 1056,
 };
 
 // ---------------------------------------------------------------------------
@@ -268,14 +272,20 @@ export const rotorTradeoff =
 export const enclosureCadImage = {
   src: "/images/projects/centrifuge-enclosure-cad.jpg",
   alt: "CAD render of the assembled laser-cut enclosure, showing the front-panel cutouts for the LCD, buttons, and status indicators",
+  width: 1200,
+  height: 1073,
 };
 export const rotorCadImage = {
   src: "/images/projects/centrifuge-rotor-cad.jpg",
   alt: "CAD render of the two-level rotor assembly: an upper tube-holder bowl mounted above a circular rotor base",
+  width: 1200,
+  height: 800,
 };
 export const frontPanelSketchImage = {
   src: "/images/projects/centrifuge-front-panel-sketch.jpg",
   alt: "Dimensioned sketch of the front enclosure panel showing button, LCD, and indicator cutout placement",
+  width: 1400,
+  height: 410,
 };
 
 // ---------------------------------------------------------------------------

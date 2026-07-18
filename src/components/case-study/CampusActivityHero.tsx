@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // The project artwork stays the primary visual; the activity chips below it
 // are a restrained "campus pulse" — a few temporary signals with a once-only
 // ring animation (see .quest-ping in globals.css), not an overlay on the
@@ -16,8 +18,7 @@ export function CampusActivityHero({
   return (
     <figure>
       <div className="overflow-hidden rounded-2xl border border-border bg-surface">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={imageAlt} className="w-full" />
+        <Image src={image} alt={imageAlt} width={1600} height={900} priority className="h-auto w-full" />
       </div>
 
       <ul className="mt-6 flex flex-wrap items-center justify-center gap-2.5">

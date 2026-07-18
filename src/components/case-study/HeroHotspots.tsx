@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { Hotspot } from "@/data/centrifuge-case-study";
 import { cn } from "@/lib/utils";
 
@@ -43,8 +44,14 @@ export function HeroHotspots({
       </div>
 
       <div className="relative overflow-hidden rounded-2xl border border-border bg-surface">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={imageAlt} className="w-full" />
+        <Image
+          src={image}
+          alt={imageAlt}
+          width={1600}
+          height={900}
+          priority
+          className="h-auto w-full"
+        />
         {visible && (
           <div className="absolute inset-0 hidden sm:block" aria-hidden={false}>
             {hotspots.map((h, i) => (

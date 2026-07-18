@@ -78,6 +78,22 @@ export const viewport: Viewport = {
 // saved preference, falling back to the OS setting.
 const themeScript = `(function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d)){e.classList.add('dark');}}catch(_){}})();`;
 
+// Site-wide Person schema so search engines can render a richer result (and
+// connect this domain to the linked GitHub/LinkedIn profiles) for name searches.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  jobTitle: site.role,
+  email: site.email,
+  address: { "@type": "PostalAddress", addressLocality: site.location },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Stanford University" },
+  sameAs: site.socials
+    .filter((s) => s.platform !== "email")
+    .map((s) => s.href),
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -89,6 +105,11 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+           
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body className="flex min-h-full flex-col">
         <a

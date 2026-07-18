@@ -4,7 +4,6 @@ import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/ui";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
-import { ProjectFilmstrip } from "@/components/ProjectFilmstrip";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -21,10 +20,6 @@ export default function ProjectsPage() {
       />
 
       <div className="mt-10">
-        <ProjectFilmstrip projects={projects.filter((p) => p.image)} />
-      </div>
-
-      <div className="mt-12">
         <ProjectsExplorer projects={projects} />
       </div>
     </Container>

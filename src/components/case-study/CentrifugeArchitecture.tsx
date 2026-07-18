@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@/components/Icons";
 
 const GROUP_STYLE: Record<string, string> = {
@@ -16,7 +17,7 @@ export function CentrifugeArchitecture({
   groups: { title: string; items: string[] }[];
   support: string;
   flows: string[];
-  diagramImage: { src: string; alt: string };
+  diagramImage: { src: string; alt: string; width: number; height: number };
 }) {
   return (
     <div>
@@ -50,8 +51,13 @@ export function CentrifugeArchitecture({
       </ul>
 
       <figure className="mt-8 overflow-hidden rounded-2xl border border-border bg-surface">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={diagramImage.src} alt={diagramImage.alt} loading="lazy" className="w-full" />
+        <Image
+          src={diagramImage.src}
+          alt={diagramImage.alt}
+          width={diagramImage.width}
+          height={diagramImage.height}
+          className="h-auto w-full"
+        />
         <figcaption className="border-t border-border px-4 py-2.5 text-xs text-subtle">
           Hand-drawn system diagram: green = control subsystem, blue = sensing subsystem, red = actuation subsystem.
         </figcaption>

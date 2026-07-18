@@ -5,8 +5,8 @@ import type { Project } from "@/lib/types";
 // ---------------------------------------------------------------------------
 //   • `slug` must be unique and URL-safe (lowercase, hyphens). Every project
 //     gets a page at /projects/<slug>; `featured: true` additionally pulls it
-//     onto the home page. Order in this array = display order (also drives
-//     the /projects filmstrip).
+//     onto the home page. Order in this array = display order, roughly
+//     ranked by impact/impressiveness rather than recency.
 //   • `tags` power the filter buttons on the Projects page.
 //   • `image` is optional; a gradient placeholder renders if omitted. Add real
 //     screenshots/diagrams in public/images/projects/ and set image + imageAlt.
@@ -50,42 +50,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "gpt2-from-scratch",
-    title: "Parameter-Efficient Adaptation of GPT-2",
-    summary:
-      "Built a GPT-2 Transformer from scratch and benchmarked parameter-efficient adaptation methods (LoRA, ReFT, soft prompts) against full fine-tuning — ReFT matched or beat full fine-tuning accuracy using 0.02% of the trainable parameters.",
-    description:
-      "Our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We then used it as a shared backbone to study parameter-efficient adaptation across sentiment classification, paraphrase detection, and conditional sonnet generation, comparing full fine-tuning against LoRA, ReFT, and soft prompt tuning, and tuning decoding strategies for generation quality.",
-    category: "ML",
-    tags: [
-      "Python",
-      "PyTorch",
-      "Transformers",
-      "GPT-2",
-      "LoRA",
-      "ReFT",
-      "Soft Prompt Tuning",
-      "DPO",
-      "Hyperparameter Tuning",
-      "Autoregressive Decoding",
-      "Statistical Analysis",
-    ],
-    featured: true,
-    year: "2025",
-    image: "/images/projects/gpt2-from-scratch.jpg",
-    imageAlt: "Bar chart comparing peak GPU memory usage across fine-tuning methods on SST",
-    role: "Team of 3",
-    highlights: [
-      "Implemented causal multi-head self-attention, pre-LayerNorm Transformer blocks, and embedding weight tying from scratch.",
-      "On sentiment classification (SST), ReFT reached 0.526 accuracy — edging out full fine-tuning's 0.520 — while updating only 0.0178% of parameters (vs. 100%).",
-      "On CFIMDB, ReFT held within 0.4 points of full fine-tuning's accuracy (0.976 vs. 0.980) while cutting peak GPU memory by roughly 62% (2,710 MB → 1,033 MB).",
-      "Systematically studied how LoRA/ReFT rank and intervention-layer placement trade off accuracy, overfitting, and compute across two datasets.",
-    ],
-    links: [
-      { label: "Report (PDF)", href: "/projects/gpt2-cs224n.pdf", type: "paper" },
-    ],
-  },
-  {
     slug: "biosurveillance-digital-immune-system",
     title: "Biosurveillance “Digital Immune System”",
     summary:
@@ -121,6 +85,42 @@ export const projects: Project[] = [
       { label: "Live Demo", href: "https://isaiasmartinezz-digitalimmunesystem-dashboard-ulzdkl.streamlit.app/", type: "demo" },
       { label: "Code", href: "https://github.com/isaiasmartinezz/DigitalImmuneSystem", type: "code" },
       { label: "Report (PDF)", href: "/projects/biosurveillance-report.pdf", type: "writeup" },
+    ],
+  },
+  {
+    slug: "gpt2-from-scratch",
+    title: "Parameter-Efficient Adaptation of GPT-2",
+    summary:
+      "Built a GPT-2 Transformer from scratch and benchmarked parameter-efficient adaptation methods (LoRA, ReFT, soft prompts) against full fine-tuning — ReFT matched or beat full fine-tuning accuracy using 0.02% of the trainable parameters.",
+    description:
+      "Our team implemented a decoder-only Transformer in the GPT-2 style — token and positional embeddings, causal multi-head self-attention, pre-LayerNorm blocks with residual connections, and output/embedding weight tying — with support for loading pretrained GPT-2 weights. We then used it as a shared backbone to study parameter-efficient adaptation across sentiment classification, paraphrase detection, and conditional sonnet generation, comparing full fine-tuning against LoRA, ReFT, and soft prompt tuning, and tuning decoding strategies for generation quality.",
+    category: "ML",
+    tags: [
+      "Python",
+      "PyTorch",
+      "Transformers",
+      "GPT-2",
+      "LoRA",
+      "ReFT",
+      "Soft Prompt Tuning",
+      "DPO",
+      "Hyperparameter Tuning",
+      "Autoregressive Decoding",
+      "Statistical Analysis",
+    ],
+    featured: true,
+    year: "2025",
+    image: "/images/projects/gpt2-from-scratch.jpg",
+    imageAlt: "Bar chart comparing peak GPU memory usage across fine-tuning methods on SST",
+    role: "Team of 3",
+    highlights: [
+      "Implemented causal multi-head self-attention, pre-LayerNorm Transformer blocks, and embedding weight tying from scratch.",
+      "On sentiment classification (SST), ReFT reached 0.526 accuracy — edging out full fine-tuning's 0.520 — while updating only 0.0178% of parameters (vs. 100%).",
+      "On CFIMDB, ReFT held within 0.4 points of full fine-tuning's accuracy (0.976 vs. 0.980) while cutting peak GPU memory by roughly 62% (2,710 MB → 1,033 MB).",
+      "Systematically studied how LoRA/ReFT rank and intervention-layer placement trade off accuracy, overfitting, and compute across two datasets.",
+    ],
+    links: [
+      { label: "Report (PDF)", href: "/projects/gpt2-cs224n.pdf", type: "paper" },
     ],
   },
   {
@@ -184,69 +184,28 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    slug: "tripcompass-sf",
-    title: "TripCompassSF — Personalized Itinerary Planner",
+    slug: "brain-injury-connection",
+    title: "Brain Injury Connection — Accessible Redesign",
     summary:
-      "Generates budget- and time-aware daily itineraries for San Francisco by pairing a learned user–POI satisfaction model with a beam-search planner.",
+      "As product manager with Develop for Good, led an accessible, cognitive-friendly website redesign for acquired-brain-injury patients and caregivers.",
     description:
-      "Generic \"top sights\" itineraries ignore what a specific traveler actually wants and rarely respect real time and budget limits. TripCompassSF addresses this in two parts: a feed-forward model learns to predict user–point-of-interest satisfaction from engineered features (interest match, popularity, pace × duration), and a beam-search planner uses those predictions to assemble day-by-day San Francisco itineraries that stay within time, budget, and opening-hour constraints. We built a curated SF point-of-interest catalog and a synthetic user–POI interaction dataset to train and evaluate the satisfaction model.",
-    category: "ML",
-    tags: ["Machine Learning", "Beam Search", "Python", "Recommender Systems"],
-    featured: false,
+      "Brain Injury Connection (BIC) needed an accessible, easy-to-navigate home for its community of ABI survivors, caregivers, and families. As product manager with Develop for Good, I led the redesign end-to-end: defining requirements, mapping user flows, and coordinating a team of engineers and designers. The rebuilt site foregrounds a 988 crisis-line banner, a filterable resource library connecting families to local support organizations, an events and community hub, and an FAQ built from real caregiver questions — all designed around cognitive-friendly, low-friction navigation for users who may themselves be recovering from brain injury.",
+    category: "Web",
+    tags: ["Product Management", "Accessibility", "UX", "Web"],
+    featured: true,
     year: "2025",
-    image: "/images/projects/tripcompass-sf.jpg",
-    imageAlt: "TripCompassSF itinerary planner showing a San Francisco route map and daily schedule",
-    role: "Team of 2",
+    image: "/images/projects/brain-injury-connection.jpg",
+    imageAlt: "The redesigned Brain Injury Connection website shown across laptop and tablet screens",
+    video: "/videos/brain-injury-connection.mp4",
+    role: "Product Manager — Develop for Good",
     highlights: [
-      "Trained a feed-forward user–POI satisfaction model over engineered features (interest match, popularity, pace × duration).",
-      "Integrated the model into a beam-search planner that assembles feasible itineraries under time, budget, and opening-hour constraints.",
-      "Built a curated San Francisco POI catalog and a synthetic user–POI interaction dataset for training and evaluation.",
+      "Led end-to-end redesign of an accessible, cognitive-friendly website for ABI patients and caregivers.",
+      "Defined product requirements, user flows, and feature scope, iterating with nonprofit stakeholders.",
+      "Coordinated design and low/no-code implementation across a team of engineers and designers.",
     ],
     links: [
-      { label: "Code", href: "https://github.com/isaiasmartinezz/cs221-finalproject", type: "code" },
-      { label: "Report (PDF)", href: "/projects/tripcompass-cs221.pdf", type: "paper" },
+      { label: "Develop for Good", href: "https://www.developforgood.org", type: "other" },
     ],
-  },
-  {
-    slug: "4d-flow-mri-hepatic-flow",
-    title: "4D Flow MRI Hepatic Flow Pipeline",
-    summary:
-      "A Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI to study Fontan hemodynamics and AVM risk.",
-    description:
-      "Fontan patients are prone to hepatic arteriovenous malformations (AVMs), but the hemodynamic signals linked to that risk are buried in large 4D Flow MRI datasets. As a researcher in the Marsden Cardiovascular Biomechanics Lab, I built a Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI scans using NumPy and SciPy, applies signal processing and pattern recognition to surface candidate AVM biomarkers, and validates and visualizes the results in Seaborn and Plotly. The pipeline is benchmarked reproducibly with Git/GitHub and Bash-based CI/CD so results can be regenerated and checked as the analysis evolves.",
-    category: "Research",
-    tags: ["Python", "NumPy", "SciPy", "Medical Imaging", "Signal Processing", "Data Visualization"],
-    featured: false,
-    year: "2025",
-    image: "/images/projects/4d-flow-mri-hepatic-flow.jpg",
-    imageAlt: "Hepatic flow pipeline concept visualization showing 4D Flow MRI slices and a 3D vascular flow render",
-    role: "Researcher — Marsden Cardiovascular Biomechanics Lab",
-    highlights: [
-      "Extract and quantify hepatic flow metrics from 4D Flow MRI using NumPy, SciPy, and Matplotlib.",
-      "Apply signal processing and pattern recognition for AVM biomarker detection, with statistical validation and visualization in Seaborn and Plotly.",
-      "Automate reproducible benchmarking with Git/GitHub, Bash, and CI/CD.",
-    ],
-    links: [],
-  },
-  {
-    slug: "llm-fallacy-detection",
-    title: "LLM Fallacy Detection",
-    summary:
-      "Benchmarked large language models for logical-fallacy detection and co-developed a detector with reproducible evaluation pipelines.",
-    description:
-      "Logical fallacies are easy for humans to miss and inconsistent for language models to catch, which makes fallacy detection a useful stress test for LLM reasoning. This project benchmarked several LLMs on the task, using Python (transformers, scikit-learn) to build baselines and report precision/recall/F1 across models. We curated datasets and prompts, implemented ETL and feature-engineering steps to keep the evaluation pipeline reproducible, and co-developed a fallacy detector, running ablation studies and error analysis to understand where and why each model's detection broke down.",
-    category: "ML",
-    tags: ["NLP", "LLMs", "Python", "scikit-learn", "Machine Learning"],
-    featured: false,
-    year: "2023",
-    image: "/images/projects/llm-fallacy-detection.jpg",
-    imageAlt: "Concept dashboard illustrating model comparison and evaluation metrics for fallacy detection",
-    highlights: [
-      "Benchmarked LLMs for fallacy detection and built baselines in Python (transformers, scikit-learn) with precision/recall/F1 reporting.",
-      "Curated datasets and prompts; implemented ETL, feature engineering, and reproducible evaluation pipelines.",
-      "Co-developed a fallacy detector and ran ablation studies and error analysis to refine model design.",
-    ],
-    links: [],
   },
   {
     slug: "centrifuge",
@@ -279,6 +238,71 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    slug: "4d-flow-mri-hepatic-flow",
+    title: "4D Flow MRI Hepatic Flow Pipeline",
+    summary:
+      "A Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI to study Fontan hemodynamics and AVM risk.",
+    description:
+      "Fontan patients are prone to hepatic arteriovenous malformations (AVMs), but the hemodynamic signals linked to that risk are buried in large 4D Flow MRI datasets. As a researcher in the Marsden Cardiovascular Biomechanics Lab, I built a Python pipeline that extracts and quantifies hepatic flow metrics from 4D Flow MRI scans using NumPy and SciPy, applies signal processing and pattern recognition to surface candidate AVM biomarkers, and validates and visualizes the results in Seaborn and Plotly. The pipeline is benchmarked reproducibly with Git/GitHub and Bash-based CI/CD so results can be regenerated and checked as the analysis evolves.",
+    category: "Research",
+    tags: ["Python", "NumPy", "SciPy", "Medical Imaging", "Signal Processing", "Data Visualization"],
+    featured: false,
+    year: "2025",
+    image: "/images/projects/4d-flow-mri-hepatic-flow.jpg",
+    imageAlt: "Hepatic flow pipeline concept visualization showing 4D Flow MRI slices and a 3D vascular flow render",
+    role: "Researcher — Marsden Cardiovascular Biomechanics Lab",
+    highlights: [
+      "Extract and quantify hepatic flow metrics from 4D Flow MRI using NumPy, SciPy, and Matplotlib.",
+      "Apply signal processing and pattern recognition for AVM biomarker detection, with statistical validation and visualization in Seaborn and Plotly.",
+      "Automate reproducible benchmarking with Git/GitHub, Bash, and CI/CD.",
+    ],
+    links: [],
+  },
+  {
+    slug: "tripcompass-sf",
+    title: "TripCompassSF — Personalized Itinerary Planner",
+    summary:
+      "Generates budget- and time-aware daily itineraries for San Francisco by pairing a learned user–POI satisfaction model with a beam-search planner.",
+    description:
+      "Generic \"top sights\" itineraries ignore what a specific traveler actually wants and rarely respect real time and budget limits. TripCompassSF addresses this in two parts: a feed-forward model learns to predict user–point-of-interest satisfaction from engineered features (interest match, popularity, pace × duration), and a beam-search planner uses those predictions to assemble day-by-day San Francisco itineraries that stay within time, budget, and opening-hour constraints. We built a curated SF point-of-interest catalog and a synthetic user–POI interaction dataset to train and evaluate the satisfaction model.",
+    category: "ML",
+    tags: ["Machine Learning", "Beam Search", "Python", "Recommender Systems"],
+    featured: false,
+    year: "2025",
+    image: "/images/projects/tripcompass-sf.jpg",
+    imageAlt: "TripCompassSF itinerary planner showing a San Francisco route map and daily schedule",
+    role: "Team of 2",
+    highlights: [
+      "Trained a feed-forward user–POI satisfaction model over engineered features (interest match, popularity, pace × duration).",
+      "Integrated the model into a beam-search planner that assembles feasible itineraries under time, budget, and opening-hour constraints.",
+      "Built a curated San Francisco POI catalog and a synthetic user–POI interaction dataset for training and evaluation.",
+    ],
+    links: [
+      { label: "Code", href: "https://github.com/isaiasmartinezz/cs221-finalproject", type: "code" },
+      { label: "Report (PDF)", href: "/projects/tripcompass-cs221.pdf", type: "paper" },
+    ],
+  },
+  {
+    slug: "llm-fallacy-detection",
+    title: "LLM Fallacy Detection",
+    summary:
+      "Benchmarked large language models for logical-fallacy detection and co-developed a detector with reproducible evaluation pipelines.",
+    description:
+      "Logical fallacies are easy for humans to miss and inconsistent for language models to catch, which makes fallacy detection a useful stress test for LLM reasoning. This project benchmarked several LLMs on the task, using Python (transformers, scikit-learn) to build baselines and report precision/recall/F1 across models. We curated datasets and prompts, implemented ETL and feature-engineering steps to keep the evaluation pipeline reproducible, and co-developed a fallacy detector, running ablation studies and error analysis to understand where and why each model's detection broke down.",
+    category: "ML",
+    tags: ["NLP", "LLMs", "Python", "scikit-learn", "Machine Learning"],
+    featured: false,
+    year: "2023",
+    image: "/images/projects/llm-fallacy-detection.jpg",
+    imageAlt: "Concept dashboard illustrating model comparison and evaluation metrics for fallacy detection",
+    highlights: [
+      "Benchmarked LLMs for fallacy detection and built baselines in Python (transformers, scikit-learn) with precision/recall/F1 reporting.",
+      "Curated datasets and prompts; implemented ETL, feature engineering, and reproducible evaluation pipelines.",
+      "Co-developed a fallacy detector and ran ablation studies and error analysis to refine model design.",
+    ],
+    links: [],
+  },
+  {
     slug: "paingone-painguin",
     title: "PainGone PainGuin — Pediatric Recovery Companion",
     summary:
@@ -299,30 +323,6 @@ export const projects: Project[] = [
     ],
     links: [
       { label: "Presentation", href: "https://www.canva.com/design/DAG5rcD2HdU/IsiQLIv7jgIYJvNsEnBm1A/view", type: "writeup" },
-    ],
-  },
-  {
-    slug: "brain-injury-connection",
-    title: "Brain Injury Connection — Accessible Redesign",
-    summary:
-      "As product manager with Develop for Good, led an accessible, cognitive-friendly website redesign for acquired-brain-injury patients and caregivers.",
-    description:
-      "Brain Injury Connection (BIC) needed an accessible, easy-to-navigate home for its community of ABI survivors, caregivers, and families. As product manager with Develop for Good, I led the redesign end-to-end: defining requirements, mapping user flows, and coordinating a team of engineers and designers. The rebuilt site foregrounds a 988 crisis-line banner, a filterable resource library connecting families to local support organizations, an events and community hub, and an FAQ built from real caregiver questions — all designed around cognitive-friendly, low-friction navigation for users who may themselves be recovering from brain injury.",
-    category: "Web",
-    tags: ["Product Management", "Accessibility", "UX", "Web"],
-    featured: true,
-    year: "2025",
-    image: "/images/projects/brain-injury-connection.jpg",
-    imageAlt: "The redesigned Brain Injury Connection website shown across laptop and tablet screens",
-    video: "/videos/brain-injury-connection.mp4",
-    role: "Product Manager — Develop for Good",
-    highlights: [
-      "Led end-to-end redesign of an accessible, cognitive-friendly website for ABI patients and caregivers.",
-      "Defined product requirements, user flows, and feature scope, iterating with nonprofit stakeholders.",
-      "Coordinated design and low/no-code implementation across a team of engineers and designers.",
-    ],
-    links: [
-      { label: "Develop for Good", href: "https://www.developforgood.org", type: "other" },
     ],
   },
 ];
