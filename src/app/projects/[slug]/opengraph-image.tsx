@@ -36,10 +36,10 @@ export default async function ProjectOpengraphImage({
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px",
-          background: "#020617",
+          background: "#0a0a0a",
           backgroundImage:
-            "radial-gradient(1000px 400px at 85% -10%, rgba(59,130,246,0.35), transparent)",
-          color: "#f1f5f9",
+            "radial-gradient(1000px 400px at 85% -10%, rgba(255,255,255,0.12), transparent)",
+          color: "#f5f5f5",
           fontFamily: "sans-serif",
         }}
       >
@@ -49,10 +49,10 @@ export default async function ProjectOpengraphImage({
               width: "16px",
               height: "16px",
               borderRadius: "999px",
-              background: "#3b82f6",
+              background: "#ffffff",
             }}
           />
-          <div style={{ fontSize: 28, color: "#94a3b8", letterSpacing: "0.05em" }}>
+          <div style={{ fontSize: 28, color: "#a3a3a3", letterSpacing: "0.05em" }}>
             {project ? `${project.category} · ${project.year}` : site.name}
           </div>
         </div>
@@ -65,7 +65,7 @@ export default async function ProjectOpengraphImage({
             style={{
               marginTop: 24,
               fontSize: 32,
-              color: "#94a3b8",
+              color: "#a3a3a3",
               maxWidth: 950,
               lineHeight: 1.4,
             }}
@@ -79,8 +79,8 @@ export default async function ProjectOpengraphImage({
                   key={tag}
                   style={{
                     fontSize: 24,
-                    color: "#93c5fd",
-                    border: "1.5px solid rgba(59,130,246,0.4)",
+                    color: "#d4d4d4",
+                    border: "1.5px solid rgba(255,255,255,0.35)",
                     borderRadius: 999,
                     padding: "8px 20px",
                   }}
@@ -92,7 +92,7 @@ export default async function ProjectOpengraphImage({
           )}
         </div>
 
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#64748b" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 26, color: "#737373" }}>
           <div>{site.name}</div>
           <div>{site.url.replace(/^https?:\/\//, "")}</div>
         </div>

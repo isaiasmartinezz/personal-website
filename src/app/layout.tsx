@@ -69,8 +69,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020617" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f7f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
   ],
 };
 
@@ -87,7 +87,7 @@ const ownerOptOutScript = `(function(){try{var p=new URLSearchParams(window.loca
 const githubUrl = site.socials.find((s) => s.platform === "github")?.href;
 const consoleGreeting = `console.log(${JSON.stringify(
   `%c👋 Hey, curious engineer — thanks for peeking under the hood. Like what you see? Let's talk: ${site.email} · ${githubUrl}`,
-)}, "font-size:13px;font-family:monospace;color:#2563eb;font-weight:600;");`;
+)}, "font-size:13px;font-family:monospace;color:#71717a;font-weight:600;");`;
 
 // Site-wide Person schema so search engines can render a richer result (and
 // connect this domain to the linked GitHub/LinkedIn profiles) for name searches.

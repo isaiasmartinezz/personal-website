@@ -18,10 +18,10 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "80px",
-          background: "#020617",
+          background: "#0a0a0a",
           backgroundImage:
-            "radial-gradient(1000px 400px at 15% -10%, rgba(59,130,246,0.35), transparent)",
-          color: "#f1f5f9",
+            "radial-gradient(1000px 400px at 15% -10%, rgba(255,255,255,0.12), transparent)",
+          color: "#f5f5f5",
           fontFamily: "sans-serif",
         }}
       >
@@ -31,10 +31,10 @@ export default function OpengraphImage() {
               width: "16px",
               height: "16px",
               borderRadius: "999px",
-              background: "#3b82f6",
+              background: "#ffffff",
             }}
           />
-          <div style={{ fontSize: 28, color: "#94a3b8", letterSpacing: "0.05em" }}>
+          <div style={{ fontSize: 28, color: "#a3a3a3", letterSpacing: "0.05em" }}>
             {site.location}
           </div>
         </div>
@@ -43,14 +43,14 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 84, fontWeight: 700, lineHeight: 1.05 }}>
             {site.name}
           </div>
-          <div style={{ marginTop: 20, fontSize: 40, color: "#93c5fd" }}>
+          <div style={{ marginTop: 20, fontSize: 40, color: "#d4d4d4" }}>
             {site.role}
           </div>
           <div
             style={{
               marginTop: 24,
               fontSize: 30,
-              color: "#94a3b8",
+              color: "#a3a3a3",
               maxWidth: 900,
             }}
           >
@@ -58,7 +58,7 @@ export default function OpengraphImage() {
           </div>
         </div>
 
-        <div style={{ fontSize: 26, color: "#64748b" }}>
+        <div style={{ fontSize: 26, color: "#737373" }}>
           {site.url.replace(/^https?:\/\//, "")}
         </div>
       </div>
