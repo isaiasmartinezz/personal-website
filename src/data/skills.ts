@@ -10,6 +10,7 @@ export const skills: SkillGroup[] = [
   {
     name: "Languages",
     skills: ["Python", "C++", "JavaScript", "SQL", "Bash"],
+    seenIn: ["gpt2-from-scratch", "centrifuge"],
   },
   {
     name: "Frameworks & Libraries",
@@ -25,6 +26,7 @@ export const skills: SkillGroup[] = [
       "Plotly",
       "REST APIs",
     ],
+    seenIn: ["gpt2-from-scratch", "biosurveillance-digital-immune-system"],
   },
   {
     name: "Tools & Infrastructure",
@@ -39,6 +41,7 @@ export const skills: SkillGroup[] = [
       "Minitab",
       "Linux",
     ],
+    seenIn: ["4d-flow-mri-hepatic-flow"],
   },
   {
     name: "Concepts & Domains",
@@ -52,5 +55,6 @@ export const skills: SkillGroup[] = [
       "Data Visualization",
       "Healthcare & Biomedical Software",
     ],
+    seenIn: ["gpt2-from-scratch", "fontan-virtual-stenting"],
   },
 ];

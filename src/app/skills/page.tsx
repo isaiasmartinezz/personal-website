@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { skills } from "@/data/skills";
+import { projects } from "@/data/projects";
 import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
-import { SkillsOverview } from "@/components/SkillsOverview";
+import { ArrowUpRightIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Skills",
@@ -20,11 +22,7 @@ export default function SkillsPage() {
         lead="What I reach for, grouped by kind. Depth varies — happy to talk specifics."
       />
 
-      <div className="mt-10">
-        <SkillsOverview groups={skills} />
-      </div>
-
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {skills.map((group, i) => (
           <Reveal
             key={group.name}
@@ -44,6 +42,28 @@ export default function SkillsPage() {
                 </li>
               ))}
             </ul>
+
+            {group.seenIn && group.seenIn.length > 0 && (
+              <p className="mt-4 text-xs text-subtle">
+                Seen in{" "}
+                {group.seenIn.map((slug, i) => {
+                  const project = projects.find((p) => p.slug === slug);
+                  if (!project) return null;
+                  return (
+                    <span key={slug}>
+                      {i > 0 && ", "}
+                      <Link
+                        href={`/projects/${slug}`}
+                        className="inline-flex items-center gap-0.5 font-medium text-accent hover:text-accent-hover"
+                      >
+                        {project.title.split("—")[0].trim()}
+                        <ArrowUpRightIcon className="size-3" />
+                      </Link>
+                    </span>
+                  );
+                })}
+              </p>
+            )}
           </Reveal>
         ))}
       </div>

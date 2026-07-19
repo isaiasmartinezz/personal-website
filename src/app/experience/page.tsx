@@ -4,7 +4,6 @@ import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/ui";
 import { ExperienceList } from "@/components/ExperienceList";
-import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -19,10 +18,6 @@ export default function ExperiencePage() {
         title="Where I've worked"
         lead="Industry internships, research, and teaching — most recent first."
       />
-      <div className="mt-12">
-        <ExperienceTimeline items={experience} />
-      </div>
-
       <div className="mt-12 max-w-3xl">
         <ExperienceList items={experience} />
       </div>

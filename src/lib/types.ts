@@ -132,6 +132,8 @@ export interface Project {
 export interface SkillGroup {
   name: string;
   skills: string[];
+  /** Slugs of 1-2 real projects that best show this category in use (see projects.ts). */
+  seenIn?: string[];
 }
 
 export interface EducationEntry {

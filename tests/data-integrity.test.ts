@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { projects } from "@/data/projects";
+import { skills } from "@/data/skills";
 import { CUSTOM_CASE_STUDY_SLUGS } from "@/lib/case-study-slugs";
 
 // These catch exactly the bug class this site has shipped before: a project
@@ -61,6 +62,17 @@ describe("projects data", () => {
     const slugs = new Set(projects.map((p) => p.slug));
     for (const slug of CUSTOM_CASE_STUDY_SLUGS) {
       expect(slugs.has(slug), `CUSTOM_CASE_STUDY_SLUGS references missing project "${slug}"`).toBe(true);
+    }
+  });
+});
+
+describe("skills data", () => {
+  it("only links to 'seen in' projects that still exist in projects.ts", () => {
+    const slugs = new Set(projects.map((p) => p.slug));
+    for (const group of skills) {
+      for (const slug of group.seenIn ?? []) {
+        expect(slugs.has(slug), `${group.name}: seenIn references missing project "${slug}"`).toBe(true);
+      }
     }
   });
 });
