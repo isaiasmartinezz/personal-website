@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
 import { projects } from "@/data/projects";
 import {
   header,
@@ -94,6 +95,7 @@ const nextProject =
 export function CoQuestCaseStudy() {
   return (
     <div className="quest-accent pb-20 pt-10 sm:pt-14">
+      <ReadingProgressBar />
       {/* ---------------- Header ---------------- */}
       <Shell>
         <Link

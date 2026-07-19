@@ -15,10 +15,13 @@ export function ProfilePhoto({
   src,
   alt,
   className,
+  priority,
 }: {
   src: string;
   alt: string;
   className?: string;
+  /** Set when this photo is above the fold (e.g. the home hero) so it's eagerly loaded as the LCP element. */
+  priority?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -57,6 +60,7 @@ export function ProfilePhoto({
       alt={alt}
       width={480}
       height={480}
+      priority={priority}
       onError={() => setFailed(true)}
       className={cn("object-cover", className)}
     />

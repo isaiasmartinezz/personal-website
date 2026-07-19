@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
 import { projects } from "@/data/projects";
 import {
   header,
@@ -104,6 +105,7 @@ const heroFlow = ["Input", "Frozen backbone", "Selected intervention", "Task out
 export function GPT2CaseStudy() {
   return (
     <div className="method-accent pb-20 pt-10 sm:pt-14">
+      <ReadingProgressBar />
       {/* ---------------- Header ---------------- */}
       <Shell>
         <Link

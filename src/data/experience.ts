@@ -39,6 +39,39 @@ export const experience: ExperienceEntry[] = [
     tech: ["Python", "Machine Learning", "AI"],
   },
   {
+    title: "Product Manager — Brain Injury Connection",
+    organization: "Develop for Good",
+    location: "Stanford, CA",
+    type: "other",
+    start: "Oct 2025",
+    end: "Feb 2026",
+    summary:
+      "Led an accessible, cognitive-friendly website redesign for ABI patients and caregivers.",
+    highlights: [
+      "Led end-to-end redesign of an accessible, cognitive-friendly website for ABI patients and caregivers.",
+      "Defined product requirements, user flows, and feature scope, iterating with nonprofit stakeholders.",
+      "Coordinated design and low/no-code implementation across a team of engineers and designers.",
+      "Partnered with Brain Injury Connection to deliver an intuitive resource platform aligned with its mission and user needs.",
+    ],
+    href: "https://www.developforgood.org",
+  },
+  {
+    title: "Project Founder & Lead",
+    organization: "Gordian Knot Center for National Security Innovation",
+    location: "Stanford, CA",
+    type: "research",
+    start: "Sep 2025",
+    end: "Present",
+    summary:
+      "Founded and lead a biosurveillance \"digital immune system\" research project.",
+    highlights: [
+      "Designing a biosurveillance \"digital immune system\": AI/ML anomaly detection, multimodal data fusion, and real-time streaming analytics for early-warning of outbreaks and biodefense threats.",
+      "Shipped a prototype pipeline and dashboard on synthetic datasets using Python, SQL, time-series modeling, and ETL, tracking latency and precision/recall KPIs.",
+      "Deployed a secure, fault-tolerant data infrastructure with containerized services, API gateways, and automated recovery for resilient biosecurity signal processing.",
+    ],
+    tech: ["Python", "SQL", "Time-Series Modeling", "ETL", "Containerization"],
+  },
+  {
     title: "Research & Development Intern",
     organization: "Medtronic Diabetes",
     location: "Los Angeles, CA",
@@ -151,5 +184,21 @@ export const experience: ExperienceEntry[] = [
       "Collaborate with instructors to align teaching strategies with curriculum goals.",
     ],
     tech: ["C++", "Python", "JavaScript"],
+  },
+  {
+    title: "Researcher",
+    organization: "Stanford Fallacy Detection CS Research Project",
+    location: "Stanford, CA",
+    type: "research",
+    start: "Jun 2023",
+    end: "Dec 2023",
+    summary:
+      "Benchmarked large language models for logical-fallacy detection.",
+    highlights: [
+      "Benchmarked LLMs for fallacy detection and built baselines in Python (transformers, scikit-learn) with precision/recall/F1 reporting.",
+      "Curated datasets and prompts; implemented ETL, feature engineering, and reproducible evaluation pipelines.",
+      "Co-developed a fallacy detector and ran ablation studies and error analysis to refine model design.",
+    ],
+    tech: ["Python", "Transformers", "scikit-learn"],
   },
 ];

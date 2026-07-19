@@ -67,6 +67,7 @@ export default function Home() {
               <ProfilePhoto
                 src={profile.photo}
                 alt={profile.photoAlt}
+                priority
                 className="relative aspect-square w-56 rounded-3xl border border-border shadow-xl sm:w-72"
               />
             </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
 import { projects } from "@/data/projects";
 import {
   header,
@@ -121,6 +122,7 @@ const nextProject =
 export function FontanCaseStudy() {
   return (
     <div className="fontan-accent pb-20 pt-10 sm:pt-14">
+      <ReadingProgressBar />
       {/* ---------------- Header ---------------- */}
       <Shell>
         <Link

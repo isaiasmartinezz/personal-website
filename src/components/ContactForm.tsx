@@ -4,11 +4,10 @@ import { useState } from "react";
 import { ArrowRightIcon } from "@/components/Icons";
 
 // ---------------------------------------------------------------------------
-// Accessible contact form. It POSTs to /api/contact, which currently just
-// validates the payload and returns success. To actually deliver mail, wire an
-// email provider inside src/app/api/contact/route.ts (instructions there).
-// Until then this still works as a graceful UX; nothing is silently lost
-// because the page also offers a direct mailto link.
+// Accessible contact form. POSTs to /api/contact, which validates the
+// payload and delivers it via Resend (see route.ts). If that ever fails —
+// e.g. a missing RESEND_API_KEY — nothing is silently lost, since the page
+// also offers a direct mailto link.
 // ---------------------------------------------------------------------------
 type Status = "idle" | "submitting" | "success" | "error";
 

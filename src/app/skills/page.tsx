@@ -4,6 +4,7 @@ import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { PageHeader } from "@/components/ui";
 import { Reveal } from "@/components/Reveal";
+import { SkillsOverview } from "@/components/SkillsOverview";
 
 export const metadata: Metadata = {
   title: "Skills",
@@ -19,7 +20,11 @@ export default function SkillsPage() {
         lead="What I reach for, grouped by kind. Depth varies — happy to talk specifics."
       />
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="mt-10">
+        <SkillsOverview groups={skills} />
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
         {skills.map((group, i) => (
           <Reveal
             key={group.name}
