@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { site } from "@/data/site";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { SiteAnalytics } from "@/components/SiteAnalytics";
 
 // Fonts: Inter (UI/body), Newsreader (serif headings), JetBrains Mono (code).
 // next/font self-hosts these — zero layout shift, no external requests.
@@ -78,6 +78,11 @@ export const viewport: Viewport = {
 // saved preference, falling back to the OS setting.
 const themeScript = `(function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&d)){e.classList.add('dark');}}catch(_){}})();`;
 
+// Visit the site once with ?owner=1 (from each of your own browsers/devices)
+// to flag this browser as yours — SiteAnalytics then drops all future
+// analytics events from it, so only real visitors get counted.
+const ownerOptOutScript = `(function(){try{var p=new URLSearchParams(window.location.search);if(p.get('owner')==='1'){localStorage.setItem('isaias-owner-visit','1');}}catch(_){}})();`;
+
 // A small hello for anyone curious enough to open devtools.
 const githubUrl = site.socials.find((s) => s.platform === "github")?.href;
 const consoleGreeting = `console.log(${JSON.stringify(
@@ -111,6 +116,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script dangerouslySetInnerHTML={{ __html: ownerOptOutScript }} />
         <script dangerouslySetInnerHTML={{ __html: consoleGreeting }} />
         <script
           type="application/ld+json"
@@ -129,7 +135,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        <Analytics />
+        <SiteAnalytics />
         <SpeedInsights />
       </body>
     </html>
