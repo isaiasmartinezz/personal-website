@@ -61,6 +61,7 @@ import {
   contributionAreas,
   contributionStatement,
   effortPhases,
+  effortTimelineNote,
   challenges,
   limitations,
   limitationsFraming,
@@ -330,50 +331,55 @@ export function FontanCaseStudy() {
         {/* ---------------- Reconstruction from 4D flow MRI ---------------- */}
         <div className="mt-16">
           <h3 className="text-2xl font-semibold text-fg">Turning clinical imaging into simulation-ready anatomy</h3>
-          <div className="mt-8 space-y-10">
-            {reconstructionStages.map((stage) => (
-              <div
-                key={stage.title}
-                className="grid grid-cols-1 items-center gap-6 sm:grid-cols-[1fr_1.4fr] sm:gap-10"
-              >
-                {stage.image && stage.imageWidth && stage.imageHeight ? (
-                  <div className="overflow-hidden rounded-xl border border-border bg-surface">
-                    <Image
-                      src={stage.image}
-                      alt={stage.imageAlt ?? stage.title}
-                      width={stage.imageWidth}
-                      height={stage.imageHeight}
-                      className="h-auto w-full"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex aspect-[4/3] items-center justify-center rounded-xl border border-dashed border-border bg-surface-2 text-center text-xs text-subtle">
-                    Illustrative step — no source figure isolated for this stage
-                  </div>
-                )}
-                <div>
+          <div className="mt-8 space-y-8">
+            {reconstructionStages.map((stage, i) => (
+              <div key={stage.title} className="flex gap-4">
+                <span
+                  aria-hidden="true"
+                  className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-xs font-semibold text-subtle"
+                >
+                  {i + 1}
+                </span>
+                <div className="flex-1">
                   <h4 className="text-base font-semibold text-fg">{stage.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-muted">{stage.body}</p>
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted">{stage.body}</p>
+                  {stage.image && stage.imageWidth && stage.imageHeight && (
+                    <div className="mt-4 max-w-sm overflow-hidden rounded-xl border border-border bg-surface">
+                      <Image
+                        src={stage.image}
+                        alt={stage.imageAlt ?? stage.title}
+                        width={stage.imageWidth}
+                        height={stage.imageHeight}
+                        className="h-auto w-full"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
 
-            <div className="grid grid-cols-1 items-center gap-6 sm:grid-cols-[1fr_1.4fr] sm:gap-10">
-              <div className="overflow-hidden rounded-xl border border-border bg-surface">
-                <Image
-                  src={centerlineImage.src}
-                  alt={centerlineImage.alt}
-                  width={centerlineImage.width}
-                  height={centerlineImage.height}
-                  className="h-auto w-full"
-                />
-              </div>
-              <div>
+            <div className="flex gap-4">
+              <span
+                aria-hidden="true"
+                className="flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-xs font-semibold text-subtle"
+              >
+                {reconstructionStages.length + 1}
+              </span>
+              <div className="flex-1">
                 <h4 className="text-base font-semibold text-fg">Centerline extraction</h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
+                <p className="mt-1.5 text-sm leading-relaxed text-muted">
                   A centerline was computed through the reconstructed model and used to guide the
                   virtual intervention described next.
                 </p>
+                <div className="mt-4 max-w-sm overflow-hidden rounded-xl border border-border bg-surface">
+                  <Image
+                    src={centerlineImage.src}
+                    alt={centerlineImage.alt}
+                    width={centerlineImage.width}
+                    height={centerlineImage.height}
+                    className="h-auto w-full"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -576,11 +582,12 @@ export function FontanCaseStudy() {
       {/* ---------------- Independent contribution, timeline, challenges ---------------- */}
       <Shell className="mt-20">
         <div id="my-work" className="scroll-mt-32">
-          <SectionHeading eyebrow="My role" title="What 200+ hours of independent thesis work involved" />
+          <SectionHeading eyebrow="My role" title="What independent thesis work involved" />
           <IndependentContributionTimeline
             areas={contributionAreas}
             statement={contributionStatement}
             phases={effortPhases}
+            timelineNote={effortTimelineNote}
           />
         </div>
 

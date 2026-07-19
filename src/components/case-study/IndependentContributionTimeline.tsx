@@ -4,10 +4,12 @@ export function IndependentContributionTimeline({
   areas,
   statement,
   phases,
+  timelineNote,
 }: {
   areas: ContributionArea[];
   statement: string;
   phases: EffortPhase[];
+  timelineNote?: string;
 }) {
   return (
     <div>
@@ -32,6 +34,9 @@ export function IndependentContributionTimeline({
 
       <div className="mt-14">
         <h3 className="text-2xl font-semibold text-fg">Research timeline</h3>
+        {timelineNote && (
+          <p className="mt-2 text-sm text-subtle">{timelineNote}</p>
+        )}
         <ol className="relative mt-8 space-y-8 border-l border-border pl-6 sm:pl-8">
           {phases.map((p) => (
             <li key={p.phase} className="relative">

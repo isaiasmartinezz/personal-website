@@ -109,7 +109,6 @@ export const header = {
     { label: "Role", value: "Sole Student Researcher" },
     { label: "Thesis", value: "Stanford Bioengineering Honors" },
     { label: "Advisor", value: "Dr. Alison Marsden" },
-    { label: "Time", value: "200+ hours" },
     { label: "Year", value: "2026" },
   ],
   heroCaption:
@@ -140,7 +139,6 @@ export const workflowMotif = ["Image", "Model", "Virtual intervention", "Mesh", 
 // Thesis-at-a-glance strip
 // ---------------------------------------------------------------------------
 export const factsMetrics: CaseStudyMetric[] = [
-  { value: "200+", label: "Hours of independent research" },
   { value: "15", label: "Fontan anatomies reconstructed and screened" },
   { value: "3", label: "Patients selected for detailed analysis" },
   { value: "12", label: "Final pre/post and rest/exercise simulation states" },
@@ -729,6 +727,9 @@ export const contributionStatement =
 // ---------------------------------------------------------------------------
 // Effort timeline
 // ---------------------------------------------------------------------------
+export const effortTimelineNote =
+  "This ran as a roughly year-long process, from initial literature grounding through final thesis defense.";
+
 export const effortPhases: EffortPhase[] = [
   {
     phase: "Phase 1",
