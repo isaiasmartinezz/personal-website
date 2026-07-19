@@ -7,6 +7,9 @@ import type { Profile } from "@/lib/types";
 // ---------------------------------------------------------------------------
 
 export const profile: Profile = {
+  homeTeaser:
+    "I care most about the intersection of software and biology — building systems that are as reliable as they are useful.",
+
   bio: [
     "I'm a software engineer and AI builder finishing a coterminal M.S. in Computer Science and B.S. in Bioengineering (with Honors) at Stanford. I like building things end-to-end — full-stack apps with real users, LLM and agentic AI systems, and the data pipelines underneath them — and my bioengineering background gives me depth in healthcare and biosecurity that most software engineers don't have.",
     "My work spans industry and research: developing agentic AI at IBM Verify, shipping a full-stack mobile app (React Native + Firebase) used by real students, implementing a GPT-2 Transformer from scratch, and founding a biosurveillance “digital immune system” at Stanford's Gordian Knot Center. Across all of it I care about reliable, well-tested systems that make a measurable difference for people.",
@@ -27,6 +30,13 @@ export const profile: Profile = {
     { label: "Focus", value: "Software Engineering · AI · Health-Tech" },
     { label: "Location", value: "Stanford, CA" },
     { label: "Graduating", value: "M.S. June 2027" },
+  ],
+
+  recognition: [
+    "Gordian Knot National Security Innovation Scholar, Stanford's Gordian Knot Center for National Security Innovation",
+    "Stanford Award of Excellence",
+    "Published research in Academic Pediatrics on early-life adversity and long-term child outcomes",
+    "HSF Scholar · SHPE / GE Scholarship",
   ],
 
   // Square avatar in /public. Replace this file to change the photo.

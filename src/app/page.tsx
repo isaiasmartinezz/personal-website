@@ -90,14 +90,11 @@ export default function Home() {
         </Reveal>
       </Container>
 
-      {/* ---------------- Intro / what I'm looking for ---------------- */}
+      {/* ---------------- Intro teaser (full story lives on /about) ---------------- */}
       <Container className="py-12">
         <Reveal className="max-w-3xl">
           <p className="text-xl leading-relaxed text-fg sm:text-2xl">
-            {profile.bio[0]}
-          </p>
-          <p className="mt-6 text-lg leading-relaxed text-muted">
-            {profile.lookingFor}
+            {profile.homeTeaser}
           </p>
           <Link
             href="/about"

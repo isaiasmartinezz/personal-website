@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { profile } from "@/data/profile";
 import { site } from "@/data/site";
 import { Container } from "@/components/Container";
-import { PageHeader, Tag, LinkButton } from "@/components/ui";
+import { PageHeader, LinkButton } from "@/components/ui";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { Reveal } from "@/components/Reveal";
-import { MailIcon, FileTextIcon } from "@/components/Icons";
+import { MailIcon, FileTextIcon, AwardIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "About",
@@ -44,12 +44,13 @@ export default function AboutPage() {
 
           <div className="mt-8">
             <h2 className="text-sm font-semibold uppercase tracking-widest text-subtle">
-              Focus areas
+              Recognition
             </h2>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {profile.focusAreas.map((area) => (
-                <li key={area}>
-                  <Tag>{area}</Tag>
+            <ul className="mt-3 space-y-2.5">
+              {profile.recognition.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-muted">
+                  <AwardIcon className="mt-0.5 size-4 shrink-0 text-accent" />
+                  {item}
                 </li>
               ))}
             </ul>

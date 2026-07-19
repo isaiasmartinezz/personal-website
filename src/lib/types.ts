@@ -57,13 +57,18 @@ export interface QuickFact {
 }
 
 export interface Profile {
-  /** Bio paragraphs — each string is one <p>. */
+  /** Short, single-sentence hook for the home page — distinct from `bio` so
+   * the home and about pages don't repeat the same paragraph. */
+  homeTeaser: string;
+  /** Bio paragraphs — each string is one <p>. Shown in full on /about only. */
   bio: string[];
-  /** One sentence: what you're looking for right now. */
+  /** One sentence: what you're looking for right now. Shown on /about only. */
   lookingFor: string;
-  /** 2–4 focus areas / interests. */
+  /** 2–4 focus areas / interests. Shown on the home page only. */
   focusAreas: string[];
   quickFacts: QuickFact[];
+  /** Real honors/recognition, shown only on /about. */
+  recognition: string[];
   /** Photo path inside /public (leave the placeholder if you have none yet). */
   photo: string;
   photoAlt: string;
