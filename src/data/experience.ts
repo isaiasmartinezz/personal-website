@@ -61,9 +61,9 @@ export const experience: ExperienceEntry[] = [
     location: "Stanford, CA",
     type: "research",
     start: "Sep 2025",
-    end: "Present",
+    end: "Jun 2026",
     summary:
-      "Founded and lead a biosurveillance \"digital immune system\" research project.",
+      "Founded and led a biosurveillance \"digital immune system\" research project.",
     highlights: [
       "Designing a biosurveillance \"digital immune system\": AI/ML anomaly detection, multimodal data fusion, and real-time streaming analytics for early-warning of outbreaks and biodefense threats.",
       "Shipped a prototype pipeline and dashboard on synthetic datasets using Python, SQL, time-series modeling, and ETL, tracking latency and precision/recall KPIs.",
@@ -177,11 +177,11 @@ export const experience: ExperienceEntry[] = [
     location: "Stanford, CA",
     type: "teaching",
     start: "Sep 2023",
-    end: "Present",
+    end: "Jun 2026",
     highlights: [
-      "Lead weekly small-group sections mentoring beginner CS students in programming and problem-solving.",
-      "Hold office hours in C++, Python, and JavaScript; help students debug and improve code design in 1:1 meetings.",
-      "Collaborate with instructors to align teaching strategies with curriculum goals.",
+      "Led weekly small-group sections mentoring beginner CS students in programming and problem-solving.",
+      "Held office hours in C++, Python, and JavaScript; helped students debug and improve code design in 1:1 meetings.",
+      "Collaborated with instructors to align teaching strategies with curriculum goals.",
     ],
     tech: ["C++", "Python", "JavaScript"],
   },
