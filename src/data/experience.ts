@@ -14,15 +14,15 @@ export const experience: ExperienceEntry[] = [
     location: "Remote",
     type: "industry",
     start: "Jun 2026",
-    end: "Present",
+    end: "Sep 2026",
     summary:
-      "Building agentic AI for enterprise identity security on the IBM Verify team.",
+      "Built agentic AI systems for enterprise identity and access management, combining LLMs with automated reasoning to automate identity risk analysis.",
     highlights: [
-      "Develop agentic AI applications that automate identity risk analysis by combining LLMs with automated reasoning to strengthen enterprise security decisions.",
-      "Build scalable Python services, APIs, and data pipelines for large-scale security analytics.",
-      "Quantitatively evaluate and optimize AI systems for latency, accuracy, and reliability.",
+      "Built a multi-agent identity risk workflow in Langflow routing cases across 4 specialized agents behind Python services and APIs, cutting end-to-end analysis from ~20 minutes of manual review to under 2 minutes per case.",
+      "Designed an MCP-based tool-filtering layer that scopes an agent's available actions to a user's entitlements, cutting exposed tool surface by over 15% across 5 workflows.",
+      "Traced ±8% run-to-run behavior variance to tool-ordering nondeterminism and reduced it to ±3%.",
     ],
-    tech: ["Python", "LLMs", "Automated Reasoning", "APIs"],
+    tech: ["Python", "LLMs", "Automated Reasoning", "Langflow", "MCP", "APIs"],
     href: "https://www.ibm.com/verify",
   },
   {
@@ -32,8 +32,8 @@ export const experience: ExperienceEntry[] = [
     start: "Jun 2026",
     end: "Present",
     highlights: [
-      "Teach Python, machine learning, and AI concepts to high school students through project-based instruction.",
-      "Mentor students in designing and implementing end-to-end AI projects with real-world datasets.",
+      "Teach Python, machine learning, and AI concepts through project-based instruction, leading small groups of 5-6 students per cohort.",
+      "Mentor students in designing and implementing end-to-end AI projects applied to fields such as education and investment, using real-world datasets.",
       "Provide technical guidance on model development, evaluation, and optimization.",
     ],
     tech: ["Python", "Machine Learning", "AI"],
@@ -46,9 +46,9 @@ export const experience: ExperienceEntry[] = [
     start: "Oct 2025",
     end: "Feb 2026",
     summary:
-      "Led an accessible, cognitive-friendly website redesign for ABI patients and caregivers.",
+      "Led an accessible, cognitive-friendly website redesign for ABI patients and caregivers, shipped across 8 pages and flows.",
     highlights: [
-      "Led end-to-end redesign of an accessible, cognitive-friendly website for ABI patients and caregivers.",
+      "Led an end-to-end redesign shipped across 8 pages and flows as PM with Develop for Good, incorporating feedback from 10+ user-testing participants.",
       "Defined product requirements, user flows, and feature scope, iterating with nonprofit stakeholders.",
       "Coordinated design and low/no-code implementation across a team of engineers and designers.",
       "Partnered with Brain Injury Connection to deliver an intuitive resource platform aligned with its mission and user needs.",
@@ -65,8 +65,9 @@ export const experience: ExperienceEntry[] = [
     summary:
       "Founded and led a biosurveillance \"digital immune system\" research project.",
     highlights: [
-      "Designing a biosurveillance \"digital immune system\": AI/ML anomaly detection, multimodal data fusion, and real-time streaming analytics for early-warning of outbreaks and biodefense threats.",
-      "Shipped a prototype pipeline and dashboard on synthetic datasets using Python, SQL, time-series modeling, and ETL, tracking latency and precision/recall KPIs.",
+      "Fused 3 independent data sources into a single risk index, validated against 50+ synthetic scenarios spanning baseline, outbreak, and stress-test conditions.",
+      "Selected an interpretable linear fusion model over higher-capacity alternatives to preserve explainability for decision-makers.",
+      "Defined precision, recall, and latency thresholds; achieved 88% precision / 82% recall at 150ms median latency.",
       "Deployed a secure, fault-tolerant data infrastructure with containerized services, API gateways, and automated recovery for resilient biosecurity signal processing.",
     ],
     tech: ["Python", "SQL", "Time-Series Modeling", "ETL", "Containerization"],
@@ -81,27 +82,27 @@ export const experience: ExperienceEntry[] = [
     summary:
       "Automated test workflows and analytics for a next-generation blood-glucose analyzer.",
     highlights: [
-      "Automated in-vitro test data collection and visualization with Python and REST APIs for a new glucose analyzer.",
-      "Built benchmarking tools to evaluate device performance using statsmodels and scikit-learn for statistical and regression analysis.",
-      "Integrated Python with Minitab for repeatable analyses (DOE, ANOVA, regression) and streamlined workflows via secure ETL pipelines and Git-based version control.",
+      "Automated test data collection and visualization with Python and REST APIs for a new glucose analyzer, cutting manual data-processing time by 45%.",
+      "Rebuilt the test-data ETL path with secure pipelines and Git-based versioning, cutting runtime from ~25 minutes to ~6 minutes per batch.",
+      "Benchmarked device performance with statsmodels and scikit-learn across 200+ test runs for statistical and regression analysis.",
     ],
     tech: ["Python", "REST APIs", "statsmodels", "scikit-learn", "Minitab", "Git"],
   },
   {
-    title: "Researcher",
+    title: "Honors Thesis Researcher",
     organization: "Stanford Marsden Cardiovascular Biomechanics Lab",
     location: "Stanford, CA",
     type: "research",
     start: "Feb 2025",
-    end: "Present",
+    end: "Jun 2026",
     summary:
-      "Fontan hemodynamics & AVM-risk research using 4D Flow MRI.",
+      "Built a patient-specific computational pipeline evaluating virtual stenting in the Fontan circulation, as sole student researcher.",
     highlights: [
-      "Build a Python data pipeline to extract and quantify hepatic flow metrics from 4D Flow MRI using NumPy, SciPy, and Matplotlib.",
-      "Apply signal processing and pattern recognition for AVM biomarker detection, with statistical validation and visualization in Seaborn and Plotly.",
-      "Automate benchmarking with Git/GitHub, Bash, and CI/CD for reproducible research pipelines.",
+      "Built a patient-specific pipeline from 4D flow MRI to CFD as sole student researcher: reconstructed 15 Fontan anatomies, screened to 3, generated paired virtual-stent geometries in svMorph, and ran 12 transient simulations at 32,000 time steps each.",
+      "Tuned branch-specific RCR Windkessel outlet conditions until simulated flow splits and mean pressures matched catheterization and MRI data; simulated moderate exercise (3× IVC inflow, 120 bpm) alongside rest.",
+      "Virtual stenting cut pressure drop 34.4–97.9% and resistance 70.4–99.5% across all three patients, but power loss rose 45.6% in one under exercise, showing a wider pathway is not automatically a more efficient one.",
     ],
-    tech: ["Python", "NumPy", "SciPy", "Matplotlib", "Seaborn", "Plotly"],
+    tech: ["SimVascular", "svMorph", "Python", "Computational Fluid Dynamics"],
   },
   {
     title: "Software Developer",
@@ -113,9 +114,9 @@ export const experience: ExperienceEntry[] = [
     summary:
       "Kiosk software to expand healthcare access in underserved communities.",
     highlights: [
-      "Build multilingual intake and symptom-check modules with REST APIs, SQL backends, and secure HIPAA-compliant data pipelines.",
-      "Integrate medical-device APIs with Dockerized microservices for scalable deployment and synchronization.",
-      "Collaborate with clinicians and engineers to refine UX through user feedback loops and iterative A/B testing.",
+      "Build multilingual intake modules on REST APIs and SQL backends, covering 4 languages across 3 intake flows.",
+      "Refined intake UX through feedback loops and A/B testing, cutting mid-intake abandonment from 22% to 9%.",
+      "Integrate medical-device APIs behind Dockerized microservices for scalable deployment and cross-device synchronization.",
     ],
     tech: ["Python", "REST APIs", "SQL", "Docker", "Microservices"],
   },
@@ -172,16 +173,15 @@ export const experience: ExperienceEntry[] = [
     ],
   },
   {
-    title: "Section Leader & Teaching Assistant",
+    title: "Teaching Assistant",
     organization: "Stanford Computer Science Department",
     location: "Stanford, CA",
     type: "teaching",
     start: "Sep 2023",
     end: "Jun 2026",
     highlights: [
-      "Led weekly small-group sections mentoring beginner CS students in programming and problem-solving.",
-      "Held office hours in C++, Python, and JavaScript; helped students debug and improve code design in 1:1 meetings.",
-      "Collaborated with instructors to align teaching strategies with curriculum goals.",
+      "Mentored 10+ students per quarter across 6+ quarters in C++, Python, and JavaScript, teaching code design and debugging practices.",
+      "Debugged and reviewed 100+ code submissions quarterly, catching recurring design issues and promoting version control and testing methodology.",
     ],
     tech: ["C++", "Python", "JavaScript"],
   },

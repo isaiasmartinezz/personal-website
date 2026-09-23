@@ -121,7 +121,7 @@ export const projectSummary =
   "I developed a patient-specific computational pipeline to evaluate how virtual stent placement alters Fontan hemodynamics at rest and during exercise. Starting from 4D flow MRI, I reconstructed three-dimensional vascular anatomy, generated virtual post-stent geometries, created volumetric meshes, ran transient CFD simulations, and compared pressure drop, power loss, and resistance before and after intervention.";
 
 export const centralFinding =
-  "Virtual stenting reduced pressure drop and resistance in all three modeled patients, but the effect on power loss was not uniform — showing that apparent anatomical narrowing alone does not guarantee a consistently favorable hemodynamic response.";
+  "Virtual stenting cut pressure drop 34.4–97.9% and resistance 70.4–99.5% across all three modeled patients, but power loss rose 45.6% in one patient under exercise — showing that apparent anatomical narrowing alone does not guarantee a consistently favorable hemodynamic response.";
 
 export const strategicInterpretation =
   "The results support patient-specific simulation as a potential method for distinguishing patients who may benefit from pathway enlargement from those whose broader flow geometry may limit or complicate that benefit.";
