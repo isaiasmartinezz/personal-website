@@ -1,21 +1,26 @@
 import { Container } from "@/components/Container";
+import { PortfolioChrome } from "@/components/PortfolioChrome";
 import { LinkButton } from "@/components/ui";
 import { ArrowRightIcon } from "@/components/Icons";
 
+// Global 404 renders outside the (portfolio) group layout, so it brings the
+// portfolio chrome itself. The personal section has its own not-found.
 export default function NotFound() {
   return (
-    <Container className="flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
-      <p className="font-serif text-6xl font-semibold text-accent">404</p>
-      <h1 className="mt-4 text-3xl font-semibold">Page not found</h1>
-      <p className="mt-3 max-w-md text-muted">
-        The page you&apos;re looking for doesn&apos;t exist or may have moved.
-      </p>
-      <div className="mt-8">
-        <LinkButton href="/" variant="primary">
-          Back home
-          <ArrowRightIcon className="size-4" />
-        </LinkButton>
-      </div>
-    </Container>
+    <PortfolioChrome>
+      <Container className="flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+        <p className="font-serif text-6xl font-semibold text-accent">404</p>
+        <h1 className="mt-4 text-3xl font-semibold">Page not found</h1>
+        <p className="mt-3 max-w-md text-muted">
+          The page you&apos;re looking for doesn&apos;t exist or may have moved.
+        </p>
+        <div className="mt-8">
+          <LinkButton href="/" variant="primary">
+            Back home
+            <ArrowRightIcon className="size-4" />
+          </LinkButton>
+        </div>
+      </Container>
+    </PortfolioChrome>
   );
 }

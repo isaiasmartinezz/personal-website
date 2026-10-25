@@ -7,17 +7,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
-  // The personal journal (/journal) is unlisted: tell crawlers to skip it at the
-  // HTTP level too (page metadata already says noindex). Deliberately not in
-  // robots.txt, which would publicly advertise the path.
-  async headers() {
-    return [
-      {
-        source: "/journal/:path*",
-        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
-      },
-    ];
-  },
 };
 
 export default nextConfig;

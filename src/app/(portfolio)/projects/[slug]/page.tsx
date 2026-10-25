@@ -7,12 +7,12 @@ import { site } from "@/data/site";
 import { Container } from "@/components/Container";
 import { Tag, LinkButton } from "@/components/ui";
 import { ProjectLinkIcon, ArrowRightIcon } from "@/components/Icons";
-import { EPVOCaseStudy } from "@/app/projects/[slug]/epvo-case-study";
-import { CoQuestCaseStudy } from "@/app/projects/[slug]/coquest-case-study";
-import { GPT2CaseStudy } from "@/app/projects/[slug]/gpt2-case-study";
-import { BiosurveillanceCaseStudy } from "@/app/projects/[slug]/biosurveillance-case-study";
-import { FontanCaseStudy } from "@/app/projects/[slug]/fontan-case-study";
-import { CentrifugeCaseStudy } from "@/app/projects/[slug]/centrifuge-case-study";
+import { EPVOCaseStudy } from "@/app/(portfolio)/projects/[slug]/epvo-case-study";
+import { CoQuestCaseStudy } from "@/app/(portfolio)/projects/[slug]/coquest-case-study";
+import { GPT2CaseStudy } from "@/app/(portfolio)/projects/[slug]/gpt2-case-study";
+import { BiosurveillanceCaseStudy } from "@/app/(portfolio)/projects/[slug]/biosurveillance-case-study";
+import { FontanCaseStudy } from "@/app/(portfolio)/projects/[slug]/fontan-case-study";
+import { CentrifugeCaseStudy } from "@/app/(portfolio)/projects/[slug]/centrifuge-case-study";
 import type { Project } from "@/lib/types";
 import { CUSTOM_CASE_STUDY_SLUGS } from "@/lib/case-study-slugs";
 

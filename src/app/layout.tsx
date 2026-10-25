@@ -3,10 +3,12 @@ import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { site } from "@/data/site";
-import { Nav } from "@/components/Nav";
-import { Footer } from "@/components/Footer";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
-import { SiteChrome } from "@/components/SiteChrome";
+
+// Shared shell for every host/section (portfolio and the personal "life"
+// section): <html>, fonts, theme, analytics. Side-specific chrome and structured
+// data live in that side's own layout:
+//   src/app/(portfolio)/layout.tsx   and   src/app/(life)/life/layout.tsx
 
 // Fonts: Inter (UI/body), Newsreader (serif headings), JetBrains Mono (code).
 // next/font self-hosts these — zero layout shift, no external requests.
@@ -27,6 +29,9 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+// Default (portfolio) metadata. It lives here, not in the (portfolio) layout, so
+// the root-level opengraph-image file merges into openGraph/twitter exactly as
+// before. The personal section's layout overrides every field below.
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -84,28 +89,6 @@ const themeScript = `(function(){var e=document.documentElement;e.classList.add(
 // analytics events from it, so only real visitors get counted.
 const ownerOptOutScript = `(function(){try{var p=new URLSearchParams(window.location.search);if(p.get('owner')==='1'){localStorage.setItem('isaias-owner-visit','1');}}catch(_){}})();`;
 
-// A small hello for anyone curious enough to open devtools.
-const githubUrl = site.socials.find((s) => s.platform === "github")?.href;
-const consoleGreeting = `console.log(${JSON.stringify(
-  `%c👋 Hey, curious engineer — thanks for peeking under the hood. Like what you see? Let's talk: ${site.email} · ${githubUrl}`,
-)}, "font-size:13px;font-family:monospace;color:#71717a;font-weight:600;");`;
-
-// Site-wide Person schema so search engines can render a richer result (and
-// connect this domain to the linked GitHub/LinkedIn profiles) for name searches.
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  url: site.url,
-  jobTitle: site.role,
-  email: site.email,
-  address: { "@type": "PostalAddress", addressLocality: site.location },
-  alumniOf: { "@type": "CollegeOrUniversity", name: "Stanford University" },
-  sameAs: site.socials
-    .filter((s) => s.platform !== "email")
-    .map((s) => s.href),
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -118,11 +101,6 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script dangerouslySetInnerHTML={{ __html: ownerOptOutScript }} />
-        <script dangerouslySetInnerHTML={{ __html: consoleGreeting }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
       </head>
       <body className="flex min-h-full flex-col">
         <a
@@ -131,9 +109,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <SiteChrome header={<Nav />} footer={<Footer />}>
-          {children}
-        </SiteChrome>
+        {children}
         <SiteAnalytics />
         <SpeedInsights />
       </body>

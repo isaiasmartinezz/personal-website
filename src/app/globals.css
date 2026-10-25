@@ -312,85 +312,85 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Journal prose — styles for markdown rendered from the personal journal's posts.
+   Life prose — styles for markdown bodies rendered in the personal section.
    (Tailwind's preflight strips default list/heading styles, so spell them out.)
 --------------------------------------------------------------------------- */
-.journal-prose {
+.life-prose {
   color: var(--fg);
   font-size: 1.0625rem;
   line-height: 1.8;
   overflow-wrap: anywhere;
 }
-.journal-prose > * + * {
+.life-prose > * + * {
   margin-top: 1.25em;
 }
-.journal-prose h2,
-.journal-prose h3 {
+.life-prose h2,
+.life-prose h3 {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.25;
 }
-.journal-prose h2 {
+.life-prose h2 {
   margin-top: 2.25em;
   font-size: 1.5rem;
 }
-.journal-prose h3 {
+.life-prose h3 {
   margin-top: 1.75em;
   font-size: 1.2rem;
 }
-.journal-prose a {
+.life-prose a {
   text-decoration: underline;
   text-decoration-color: var(--border);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s;
 }
-.journal-prose a:hover {
+.life-prose a:hover {
   text-decoration-color: var(--accent);
 }
-.journal-prose ul,
-.journal-prose ol {
+.life-prose ul,
+.life-prose ol {
   padding-left: 1.4em;
 }
-.journal-prose ul {
+.life-prose ul {
   list-style: disc;
 }
-.journal-prose ol {
+.life-prose ol {
   list-style: decimal;
 }
-.journal-prose li + li {
+.life-prose li + li {
   margin-top: 0.4em;
 }
-.journal-prose blockquote {
+.life-prose blockquote {
   border-left: 2px solid var(--border);
   padding-left: 1em;
   color: var(--muted);
   font-style: italic;
 }
-.journal-prose img {
+.life-prose img {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--border);
   border-radius: 0.75rem;
 }
-.journal-prose hr {
+.life-prose hr {
   border: 0;
   border-top: 1px solid var(--border);
   margin-block: 2em;
 }
-.journal-prose code {
+.life-prose code {
   font-family: var(--font-mono);
   font-size: 0.9em;
   background: var(--surface-2);
   border-radius: 0.35rem;
   padding: 0.1em 0.35em;
 }
-.journal-prose pre {
+.life-prose pre {
   overflow-x: auto;
   background: var(--surface-2);
   border-radius: 0.75rem;
   padding: 1em;
 }
-.journal-prose pre code {
+.life-prose pre code {
   background: none;
   padding: 0;
 }
