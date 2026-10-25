@@ -167,4 +167,29 @@ Keep it running until Phase 5. When the first real journal item is approved thro
 ## 11. Phase 0 checklist
 
 - [x] `docs/ARCHITECTURE.md` exists and names the stack (Next.js 16 App Router) and host (Vercel, Vercel DNS)
-- [ ] You choose subdomain vs path (recommendation: subdomain; see §1 and §9.2)
+- [x] You chose the subdomain (`life.isaiasmartinez.dev`, same repo and Vercel project)
+
+## 12. Phase 1 result
+
+Built and verified locally; pushed to `main` only after every check below passed.
+
+**What exists**
+- `schema/published-item.schema.json`, `schema/manifest.schema.json` (JSON Schema 2020-12, `schemaVersion: 1`) and `schema/validate.mjs`, the single validator used by `npm run validate:life` (also `prebuild`), the build-time loader (`src/lib/life/load.ts`), and the tests. An invalid file fails `next build` and names the file and field.
+- Rules enforced beyond the schema: coordinates ≤ 3 decimals (location and track points), friends-tier items only under `content/life/friends/` (and nothing else there), filename = slug, unique ids and per-type slugs, referenced media exists, and every file's sha256 must match `manifest.json` (detects hand-edits).
+- `scripts/check-life-media.mjs` rejects EXIF/GPS/XMP/IPTC in `public/life-media/` and any file that is not jpg/png/webp.
+- 21 fixtures (3 per type, ids `fixture-*`) from `scripts/generate-life-fixtures.mjs`, with a visible "Sample content" banner. The Publisher replaces them in Phase 3.
+- The personal section under `src/app/(life)/life/` (home, 7 lists, 21 details, places map with Leaflet + OpenStreetMap, own 404, `robots.txt`, OG image). Phase 1 serves the public tier only; `content/life/friends/` is validated but never read.
+- `next.config.ts`: on `life.isaiasmartinez.dev` (dev: `life.localhost:3000`) requests are rewritten to `/life/*` and carry `X-Robots-Tag: noindex, nofollow, noarchive`; `/life/*` on any other host is a 404 (except Vercel Preview deployments, which are team-protected, so Phase 3 can preview).
+- `postbuild` (`scripts/check-life-build.mjs`) fails the build if any prerendered personal page lacks `noindex`, contains portfolio identity/JSON-LD/manifest, or if `sitemap.xml` mentions the personal section. CI (`.github/workflows/ci.yml`) runs lint, tsc, tests, both content checks, and the build.
+- Old `/journal` removed (404), with `gray-matter`, `scripts/new-post.mjs`, and `tests/journal.test.ts`.
+
+**Things that differ from the §9 proposal**
+- The root `not-found.tsx` is deliberately neutral. Next serializes the root not-found boundary into every page's RSC payload, so a portfolio-styled one leaked the portfolio name and nav into personal pages. The styled portfolio 404 lives in `(portfolio)/not-found.tsx`, reached through a `(portfolio)/[...rest]` catch-all. Both catch-alls (`/[...rest]`, `/life/[...rest]`) are dynamic routes that only ever render a 404; everything else is still prerendered apart from `POST /api/contact`.
+- Personal-page titles are `absolute` because a layout's `default` title still passes through the parent's `%s · Isaias Martinez` template.
+- `manifest.ts` and `opengraph-image.tsx` stay at `src/app/` root (inside a route group the manifest was silently dropped and the OG URL gained a hash). Per-project OG images now have a hashed path (`/projects/<slug>/opengraph-image-1c0t56`); the HTML output of 11 portfolio pages was otherwise byte-identical before and after the split.
+- Rewrites chain, so the pass-through rule excludes anything already under `/life`; consequently `life.<host>/life/films` also resolves (harmless: same host, noindex).
+
+**Still open**
+- Attach `life.isaiasmartinez.dev` to the Vercel project (dashboard step; no DNS change). Until then the host 404s and the fixtures are not visible anywhere.
+- Analytics and Speed Insights are shared with the portfolio (the scripts load on the life host too). Decide in a later phase whether the personal side should be excluded.
+- Friends tier gating is still the Phase 4 decision in §8.

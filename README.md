@@ -86,6 +86,14 @@ If you have no papers yet, set `export const publications = []` in
 
 ---
 
+## Personal section (life.isaiasmartinez.dev)
+
+A separate, unlisted, `noindex` section served from its own host out of `src/app/(life)/life/`. The portfolio never links to it. Its content is generated JSON in `content/life/` (validated against `schema/`); don't hand-edit it. See `docs/ARCHITECTURE.md` §12.
+
+- Local: `npm run dev`, then open `http://life.localhost:3000` (browsers resolve `*.localhost`). `localhost:3000/life/...` is a 404 by design.
+- `npm run validate:life` and `npm run check:life-media` run before every build; `npm run build` also checks that every personal page is `noindex`.
+- Current content is placeholder fixtures (`npm run`-free: `node scripts/generate-life-fixtures.mjs` regenerates them).
+
 ## Design & theming
 
 The whole palette is a handful of CSS variables at the top of
