@@ -48,7 +48,8 @@ function decimalPlaces(n) {
 }
 
 function formatAjvErrors(errors) {
-  return (errors ?? []).map((e) => {
+  // Drop the `if`/`then` wrapper errors; the specific child error already says what is wrong.
+  return (errors ?? []).filter((e) => e.keyword !== "if").map((e) => {
     const where = e.instancePath || "(root)";
     const extra = e.params && Object.keys(e.params).length ? ` ${JSON.stringify(e.params)}` : "";
     return `${where} ${e.message}${extra}`;

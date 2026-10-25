@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npx tsc --noEmit
+      - run: npm test
+      - run: npm run validate:life
+      - run: npm run check:life-media
+      # `build` runs prebuild (content + media checks) and postbuild (every personal
+      # page is noindex, nothing leaks the portfolio, sitemap is clean).
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
