@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
+import { SiteChrome } from "@/components/SiteChrome";
 
 // Fonts: Inter (UI/body), Newsreader (serif headings), JetBrains Mono (code).
 // next/font self-hosts these — zero layout shift, no external requests.
@@ -130,11 +131,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Nav />
-        <main id="main" className="flex-1">
+        <SiteChrome header={<Nav />} footer={<Footer />}>
           {children}
-        </main>
-        <Footer />
+        </SiteChrome>
         <SiteAnalytics />
         <SpeedInsights />
       </body>
