@@ -92,7 +92,7 @@ A separate, unlisted, `noindex` section served from its own host out of `src/app
 
 - Local: `npm run dev`, then open `http://life.localhost:3000` (browsers resolve `*.localhost`). `localhost:3000/life/...` is a 404 by design.
 - `npm run validate:life` and `npm run check:life-media` run before every build; `npm run build` also checks that every personal page is `noindex`.
-- Current content is placeholder fixtures (`npm run`-free: `node scripts/generate-life-fixtures.mjs` regenerates them).
+- Current content is placeholder fixtures (`node scripts/generate-life-fixtures.mjs` regenerates them).
 
 ## Design & theming
 
