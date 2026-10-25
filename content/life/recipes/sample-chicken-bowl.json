@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "meal"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-chicken-bowl",
+  "slug": "sample-chicken-bowl",
+  "type": "recipe",
+  "title": "Sample chicken bowl",
+  "date": "2026-01-20",
+  "body": "Sample recipe intro.",
+  "data": {
+    "kind": "meal",
+    "servings": 4,
+    "proteinPerServing": 38,
+    "ingredients": [
+      {
+        "item": "Ingredient one",
+        "quantity": "200 g"
+      },
+      {
+        "item": "Ingredient two",
+        "quantity": "1 tbsp"
+      },
+      {
+        "item": "Salt"
+      }
+    ],
+    "steps": [
+      "Prepare everything.",
+      "Cook until done.",
+      "Serve."
+    ]
+  }
+}

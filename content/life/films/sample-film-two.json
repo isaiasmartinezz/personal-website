@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-film-two",
+  "slug": "sample-film-two",
+  "type": "film",
+  "title": "Sample Film Two",
+  "date": "2026-01-08",
+  "rating": 3,
+  "sourceRating": "3/5",
+  "body": "Sample short note about the film.",
+  "data": {
+    "year": 2012,
+    "director": "B. Director",
+    "posterPath": "/life-media/fixtures/poster.jpg",
+    "watchedDate": "2026-01-08",
+    "rewatch": false
+  }
+}

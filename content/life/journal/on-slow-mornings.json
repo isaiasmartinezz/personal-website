@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "essay"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-2.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-on-slow-mornings",
+  "slug": "on-slow-mornings",
+  "type": "journal",
+  "title": "On slow mornings",
+  "date": "2026-01-11",
+  "body": "This is **sample content** for the essay layout.\n\n## What happened\n\n- A short list item\n- Another one\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "data": {
+    "weekNumber": 2,
+    "kind": "essay",
+    "coverPhoto": "/life-media/fixtures/photo-2.jpg"
+  }
+}

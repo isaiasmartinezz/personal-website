@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "japanese"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-noodle-bar",
+  "slug": "sample-noodle-bar",
+  "type": "place",
+  "title": "Sample Noodle Bar",
+  "date": "2026-01-10",
+  "rating": 4.5,
+  "sourceRating": "4.5/5",
+  "body": "Sample review text. Great place, would return.",
+  "location": {
+    "name": "Sample Noodle Bar",
+    "city": "Palo Alto",
+    "lat": 37.427,
+    "lng": -122.17
+  },
+  "data": {
+    "cuisine": "Japanese",
+    "priceLevel": 2,
+    "visitDates": [
+      "2026-01-10"
+    ],
+    "dishes": [
+      "House special",
+      "Seasonal side"
+    ]
+  }
+}

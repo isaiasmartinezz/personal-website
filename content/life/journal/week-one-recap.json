@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "recap"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-1.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-week-one-recap",
+  "slug": "week-one-recap",
+  "type": "journal",
+  "title": "Week one: settling in",
+  "date": "2026-01-04",
+  "body": "This is **sample content** for the recap layout.\n\n## What happened\n\n- A short list item\n- Another one\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "data": {
+    "weekNumber": 1,
+    "kind": "recap",
+    "coverPhoto": "/life-media/fixtures/photo-1.jpg"
+  }
+}

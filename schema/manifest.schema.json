@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://isaiasmartinez.dev/schema/manifest.schema.json",
+  "title": "LifeManifest",
+  "description": "Written by the Publisher alongside every export: one entry per published file, with its sha256, so hand-edits to generated content are detectable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "items"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "tier", "slug", "path", "sha256"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "tier": { "enum": ["public", "friends"] },
+          "slug": { "type": "string" },
+          "path": { "type": "string", "description": "Relative to content/life/, forward slashes." },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}

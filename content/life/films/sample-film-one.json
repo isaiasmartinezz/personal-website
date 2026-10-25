@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-film-one",
+  "slug": "sample-film-one",
+  "type": "film",
+  "title": "Sample Film One",
+  "date": "2026-01-08",
+  "rating": 4.5,
+  "sourceRating": "4.5/5",
+  "body": "Sample short note about the film.",
+  "data": {
+    "year": 1999,
+    "director": "A. Director",
+    "posterPath": "/life-media/fixtures/poster.jpg",
+    "watchedDate": "2026-01-08",
+    "rewatch": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-3.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-mountain-week",
+  "slug": "sample-mountain-week",
+  "type": "trip",
+  "title": "Mountain week",
+  "date": "2026-04-01",
+  "body": "Sample itinerary notes.",
+  "data": {
+    "destination": "Tahoe",
+    "startDate": "2026-04-01",
+    "endDate": "2026-04-05",
+    "days": [
+      {
+        "label": "Day 1",
+        "stops": [
+          {
+            "name": "Arrive and walk",
+            "note": "Sample note"
+          },
+          {
+            "name": "Dinner"
+          }
+        ]
+      },
+      {
+        "label": "Day 2",
+        "stops": [
+          {
+            "name": "Main activity"
+          }
+        ]
+      }
+    ]
+  }
+}

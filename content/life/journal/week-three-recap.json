@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "recap"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-3.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-week-three-recap",
+  "slug": "week-three-recap",
+  "type": "journal",
+  "title": "Week three: a long weekend",
+  "date": "2026-01-18",
+  "body": "This is **sample content** for the recap layout.\n\n## What happened\n\n- A short list item\n- Another one\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "data": {
+    "weekNumber": 3,
+    "kind": "recap",
+    "coverPhoto": "/life-media/fixtures/photo-3.jpg"
+  }
+}

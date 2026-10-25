@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-01-15T12:00:00.000Z",
+  "items": [
+    {
+      "id": "fixture-week-one-recap",
+      "type": "journal",
+      "tier": "public",
+      "slug": "week-one-recap",
+      "path": "journal/week-one-recap.json",
+      "sha256": "8658480f7f9bdb4baf5e2f9af5195be3da029f60b8033924737146a9001f59ab"
+    },
+    {
+      "id": "fixture-on-slow-mornings",
+      "type": "journal",
+      "tier": "public",
+      "slug": "on-slow-mornings",
+      "path": "journal/on-slow-mornings.json",
+      "sha256": "59db1da81edb67957c31fc22293ccb397346b8fd999c459f9a7f44e2a749276d"
+    },
+    {
+      "id": "fixture-week-three-recap",
+      "type": "journal",
+      "tier": "public",
+      "slug": "week-three-recap",
+      "path": "journal/week-three-recap.json",
+      "sha256": "4a97832d19fa1b97e11e5b6d081f0bff35371b3fc0efaf4ab0058920cd81cefc"
+    },
+    {
+      "id": "fixture-sample-noodle-bar",
+      "type": "place",
+      "tier": "public",
+      "slug": "sample-noodle-bar",
+      "path": "places/sample-noodle-bar.json",
+      "sha256": "8df7af05055db7e5bcae0f5d159defa44808aaeba03b43fa90cd6e7c385216e4"
+    },
+    {
+      "id": "fixture-sample-taqueria",
+      "type": "place",
+      "tier": "public",
+      "slug": "sample-taqueria",
+      "path": "places/sample-taqueria.json",
+      "sha256": "6752729359b3cb273e6531f7855a8318b85fc26461cee6e7dea08a3c6b969a27"
+    },
+    {
+      "id": "fixture-sample-bistro",
+      "type": "place",
+      "tier": "public",
+      "slug": "sample-bistro",
+      "path": "places/sample-bistro.json",
+      "sha256": "5001b82377411c7203bc5db08e94ff00f274ef543e5c508a1ffe564e0957304e"
+    },
+    {
+      "id": "fixture-sample-film-one",
+      "type": "film",
+      "tier": "public",
+      "slug": "sample-film-one",
+      "path": "films/sample-film-one.json",
+      "sha256": "7f5b8e5933fd9cd1ff0b418d518a391ee0d78e956adcdae1b997b6960ace66c9"
+    },
+    {
+      "id": "fixture-sample-film-two",
+      "type": "film",
+      "tier": "public",
+      "slug": "sample-film-two",
+      "path": "films/sample-film-two.json",
+      "sha256": "0115fe0f0ec68eee279514abb67678fba1ad0004b5dcf171d27760c9fb3cfa81"
+    },
+    {
+      "id": "fixture-sample-film-three",
+      "type": "film",
+      "tier": "public",
+      "slug": "sample-film-three",
+      "path": "films/sample-film-three.json",
+      "sha256": "a1c7f2affa052c23130919db8a4799b68032f6ddfee256acb0b8121a07308121"
+    },
+    {
+      "id": "fixture-sample-coast-weekend",
+      "type": "trip",
+      "tier": "public",
+      "slug": "sample-coast-weekend",
+      "path": "trips/sample-coast-weekend.json",
+      "sha256": "123a37000e9996cda224aec806cd2dcc27db0458d629d4b1fa892f41f413db27"
+    },
+    {
+      "id": "fixture-sample-city-break",
+      "type": "trip",
+      "tier": "public",
+      "slug": "sample-city-break",
+      "path": "trips/sample-city-break.json",
+      "sha256": "1d3dcd2ee7ddb84d1e483def2fa1a68bc3f14c3a46178a25ff1a679d00292418"
+    },
+    {
+      "id": "fixture-sample-mountain-week",
+      "type": "trip",
+      "tier": "public",
+      "slug": "sample-mountain-week",
+      "path": "trips/sample-mountain-week.json",
+      "sha256": "ef311735e8a657001e101ef98ce2f0052c1d2a3524e4f15f14fbf7ad44ee9ae8"
+    },
+    {
+      "id": "fixture-sample-ridge-loop",
+      "type": "hike",
+      "tier": "public",
+      "slug": "sample-ridge-loop",
+      "path": "hikes/sample-ridge-loop.json",
+      "sha256": "b035501ea23e498e32afd3a24b2f517d9904e6842a5f437a879611679bdd44a8"
+    },
+    {
+      "id": "fixture-sample-creek-trail",
+      "type": "hike",
+      "tier": "public",
+      "slug": "sample-creek-trail",
+      "path": "hikes/sample-creek-trail.json",
+      "sha256": "7f977d9e6f7d7b21b255a31a5fbcae1fea3153edb5afedc3cc68900ca6f728ee"
+    },
+    {
+      "id": "fixture-sample-summit-day",
+      "type": "hike",
+      "tier": "public",
+      "slug": "sample-summit-day",
+      "path": "hikes/sample-summit-day.json",
+      "sha256": "f271e868ff212b0e5f6c4c88e16e4376a8068b3b3edebf935521c57b620126c1"
+    },
+    {
+      "id": "fixture-sample-chicken-bowl",
+      "type": "recipe",
+      "tier": "public",
+      "slug": "sample-chicken-bowl",
+      "path": "recipes/sample-chicken-bowl.json",
+      "sha256": "1e43f38fbe18429858c5da3d004913713b7f3c32f63abeaf26960fd2ea566905"
+    },
+    {
+      "id": "fixture-sample-lentil-stew",
+      "type": "recipe",
+      "tier": "public",
+      "slug": "sample-lentil-stew",
+      "path": "recipes/sample-lentil-stew.json",
+      "sha256": "5dc7debfd9a9e8abbb5beff74faedfa385db5e5cf6e017ef50e839f014a0fc03"
+    },
+    {
+      "id": "fixture-sample-creami-pint",
+      "type": "recipe",
+      "tier": "public",
+      "slug": "sample-creami-pint",
+      "path": "recipes/sample-creami-pint.json",
+      "sha256": "7457e33dfaec8681a640c8ef10a8caa10ad5524a094739276591f28c3a203d53"
+    },
+    {
+      "id": "fixture-sample-board-game-one",
+      "type": "collection_entry",
+      "tier": "public",
+      "slug": "sample-board-game-one",
+      "path": "collections/sample-board-game-one.json",
+      "sha256": "efe622510ccf92aff9fa54235538336325c36fc5fde14387867d64c2e01e03e4"
+    },
+    {
+      "id": "fixture-sample-board-game-two",
+      "type": "collection_entry",
+      "tier": "public",
+      "slug": "sample-board-game-two",
+      "path": "collections/sample-board-game-two.json",
+      "sha256": "186ab69365f523a75ca47a11bffed2539bf638a2565fa72ddccc43ec46afd76c"
+    },
+    {
+      "id": "fixture-sample-cheese-one",
+      "type": "collection_entry",
+      "tier": "public",
+      "slug": "sample-cheese-one",
+      "path": "collections/sample-cheese-one.json",
+      "sha256": "ba63024896a3b089c5ec622600409df9ce3d49d193a49171d364dcf0aa30e531"
+    }
+  ]
+}

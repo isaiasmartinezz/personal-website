@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-1.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-coast-weekend",
+  "slug": "sample-coast-weekend",
+  "type": "trip",
+  "title": "Coast weekend",
+  "date": "2026-02-06",
+  "body": "Sample itinerary notes.",
+  "data": {
+    "destination": "Big Sur",
+    "startDate": "2026-02-06",
+    "endDate": "2026-02-08",
+    "days": [
+      {
+        "label": "Day 1",
+        "stops": [
+          {
+            "name": "Arrive and walk",
+            "note": "Sample note"
+          },
+          {
+            "name": "Dinner"
+          }
+        ]
+      },
+      {
+        "label": "Day 2",
+        "stops": [
+          {
+            "name": "Main activity"
+          }
+        ]
+      }
+    ]
+  }
+}

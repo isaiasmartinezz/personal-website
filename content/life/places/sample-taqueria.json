@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample",
+    "mexican"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-taqueria",
+  "slug": "sample-taqueria",
+  "type": "place",
+  "title": "Sample Taqueria",
+  "date": "2026-01-10",
+  "rating": 4,
+  "sourceRating": "4/5",
+  "body": "Sample review text. Great place, would return.",
+  "location": {
+    "name": "Sample Taqueria",
+    "city": "Palo Alto",
+    "lat": 37.444,
+    "lng": -122.161
+  },
+  "data": {
+    "cuisine": "Mexican",
+    "priceLevel": 1,
+    "visitDates": [
+      "2026-01-10"
+    ],
+    "dishes": [
+      "House special",
+      "Seasonal side"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [
+    {
+      "path": "/life-media/fixtures/photo-3.jpg",
+      "width": 1200,
+      "height": 800,
+      "alt": "Placeholder image"
+    }
+  ],
+  "provenance": {
+    "source": "gpx"
+  },
+  "id": "fixture-sample-summit-day",
+  "slug": "sample-summit-day",
+  "type": "hike",
+  "title": "Sample Summit Day",
+  "date": "2026-02-14",
+  "rating": 4,
+  "body": "Sample trail report.",
+  "location": {
+    "name": "Sample Summit Day",
+    "lat": 37.5,
+    "lng": -122.2
+  },
+  "data": {
+    "trailName": "Sample Summit Day",
+    "distanceKm": 14.2,
+    "elevationGainM": 980,
+    "durationMin": 330
+  }
+}

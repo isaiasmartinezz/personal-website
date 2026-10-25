@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "tier": "public",
+  "updatedAt": "2026-01-15T12:00:00.000Z",
+  "tags": [
+    "sample"
+  ],
+  "photos": [],
+  "provenance": {
+    "source": "manual"
+  },
+  "id": "fixture-sample-board-game-one",
+  "slug": "sample-board-game-one",
+  "type": "collection_entry",
+  "title": "Sample Board Game One",
+  "date": "2026-01-25",
+  "rating": 4,
+  "body": "Sample notes.",
+  "data": {
+    "collection": "board-games",
+    "status": "played"
+  }
+}
